@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Présentation DAE - 10/11/2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+    <link rel="stylesheet" href="custom.css">
+    <style>
+        .etat-notification { background-color: #ffc107 !important; color: black !important; }
+        .etat-attente-vide { background-color: #dc3545 !important; }
+        .comparison-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 10px 0;
+        }
+        .comparison-table {
+            width: 45%;
+        }
+        .comparison-table h3 {
+            color: #FFD700;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+        }
+        .chart-container {
+            width: 100%;
+            margin-top: 8px;
+            padding: 5px;
+            height: 220px;
+        }
+        .insight-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            padding: 6px 10px;
+            margin-top: 6px;
+            font-size: 0.52em;
+            text-align: left;
+            line-height: 1.3;
+        }
+        .insight-box strong {
+            color: #FFD700;
+            font-size: 1.15em;
+        }
+        .variation-item {
+            margin: 2px 0;
+            padding-left: 8px;
+        }
+        .metric {
+            display: inline-block;
+            margin: 0 15px;
+            color: #FFD700;
+        }
+        .metric-value {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        canvas {
+            max-height: 280px !important;
+        }
+        
+        /* Animation pour le graphique */
+        @keyframes drawLine {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="launcher">
+        <img src="logo_sonac.png" alt="Logo SONAC">
+        <h1>Lancer la Présentation</h1>
+        <p>(Cliquez pour démarrer)</p>
+    </div>
+
+    <div class="reveal" style="display: none;">
+        <div class="slides">
+            <section class="title-slide">
+                <h1 class="hover-zoom" style="font-size: 2.5em;">RÉUNION HEBDOMADAIRE DE LA<br>DIRECTION DE L'ARBITRAGE ET DES<br>ENGAGEMENTS DU 10 NOVEMBRE 2025</h1>
+                <h2 style="font-style: italic; font-size: 1.2em; color: white;">État d'avancement des dossiers du 03 AU 07 NOVEMBRE 2025</h2>
+            </section>
+
+            <section class="agenda-slide">
+                <h2 class="hover-zoom">ORDRE DU JOUR</h2>
+                <div style="text-align: left; font-size: 1.2em; max-width: 85%; margin: 0 auto;">
+                    <ol style="list-style-type: none; padding-left: 0;">
+                        <li class="hover-zoom" style="margin-bottom: 0.5em;"><span style="color: #FFD700;">I</span> - ÉTAT RÉCAPITULATIF DES DOSSIERS PAR PRODUIT (COMPARATIF)</li>
+                        <li class="hover-zoom" style="margin-bottom: 0.5em;"><span style="color: #FFD700;">II</span> - ÉTAT RÉCAPITULATIF DES IMPUTATIONS</li>
+                        <li class="hover-zoom" style="margin-bottom: 0.5em;"><span style="color: #FFD700;">III</span> - PRÉSENTATION PAR RISK MANAGER</li>
+                        <li class="hover-zoom" style="margin-bottom: 0.5em;"><span style="color: #FFD700;">IV</span> - GROS DOSSIERS</li>
+                        <li class="hover-zoom" style="margin-bottom: 0.5em;"><span style="color: #FFD700;">V</span> - ÉTAT DE TRAITEMENT DES DOSSIERS EN INSTANCE</li>
+                        <li class="hover-zoom" style="margin-bottom: 0.5em;"><span style="color: #FFD700;">VI</span> - CRÉDIT INTÉRIEUR</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="recap-produit-comparison">
+                <h2 class="animated-title hover-zoom" style="margin-bottom: 10px; font-size: 1.8em;">ÉTAT RÉCAPITULATIF PAR PRODUIT - COMPARATIF</h2>
+                
+                <div class="comparison-container">
+                    <div class="comparison-table">
+                        <h3 style="font-size: 0.7em;">27-31 OCTOBRE 2025</h3>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.55em;">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #FFD700; padding: 4px; background-color: rgba(255, 215, 0, 0.1); color: #FFD700;">PRODUITS</th>
+                                    <th style="border: 1px solid #FFD700; padding: 4px; background-color: rgba(255, 215, 0, 0.1); color: #FFD700;">NOMBRE</th>
+                                    <th style="border: 1px solid #FFD700; padding: 4px; background-color: rgba(255, 215, 0, 0.1); color: #FFD700;">ENGAGEMENTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Avance Démarrage</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">5</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">121 013 180</td></tr>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Bonne Exécution</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">9</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">77 380 590</td></tr>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Retenue Garantie</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">3</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">58 918 842</td></tr>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Soumission</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">45</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">470 628 415</td></tr>
+                                <tr style="font-weight: bold; border-top: 2px solid white;">
+                                    <td style="border: 1px solid #FFD700; padding: 3px;">TOTAL</td>
+                                    <td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">62</td>
+                                    <td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">727 941 027</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="comparison-table">
+                        <h3 style="font-size: 0.7em;">03-07 NOVEMBRE 2025</h3>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.55em;">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #FFD700; padding: 4px; background-color: rgba(255, 215, 0, 0.1); color: #FFD700;">PRODUITS</th>
+                                    <th style="border: 1px solid #FFD700; padding: 4px; background-color: rgba(255, 215, 0, 0.1); color: #FFD700;">NOMBRE</th>
+                                    <th style="border: 1px solid #FFD700; padding: 4px; background-color: rgba(255, 215, 0, 0.1); color: #FFD700;">ENGAGEMENTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Avance Démarrage</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">2</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">1 515 392 889</td></tr>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Bonne Exécution</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">11</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">449 109 267</td></tr>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Retenue Garantie</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">6</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">92 025 777</td></tr>
+                                <tr><td style="border: 1px solid #FFD700; padding: 3px;">Soumission</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">46</td><td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">409 339 765</td></tr>
+                                <tr style="font-weight: bold; border-top: 2px solid white;">
+                                    <td style="border: 1px solid #FFD700; padding: 3px;">TOTAL</td>
+                                    <td style="border: 1px solid #FFD700; padding: 3px; text-align: center;">65</td>
+                                    <td style="border: 1px solid #FFD700; padding: 3px; text-align: right;">2 465 867 698</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="chart-container" style="height: 250px; margin-top: 5px;">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+
+                <div class="insight-box" style="margin-top: 5px; font-size: 0.5em;">
+                    <strong>📊 ANALYSE DES VARIATIONS :</strong><br>
+                    <div class="variation-item">• <strong>Avance de démarrage :</strong> forte hausse des montants (+1152%) malgré la baisse du nombre de dossiers (5 → 2).</div>
+                    <div class="variation-item">• <strong>Bonne exécution :</strong> progression notable du volume (9 → 11 dossiers) et forte hausse des engagements (+480%).</div>
+                    <div class="variation-item">• <strong>Retenue de garantie :</strong> doublement du nombre de dossiers (3 → 6) et progression des montants (+56%).</div>
+                    <div class="variation-item">• <strong>Soumission :</strong> légère hausse du volume (45 → 46) mais baisse des montants (-13%), suggérant des marchés de moindre envergure.</div>
+                    <div class="variation-item">• <strong>Total général :</strong> hausse du nombre total de dossiers (62 → 65, +4,8%) et multiplication des engagements par 3,4 (+238,7%).</div>
+                </div>
+            </section>
+
+            <section id="recap-imputation">
+                <h2 class="animated-title hover-zoom">ÉTAT RÉCAPITULATIF DES IMPUTATIONS</h2>
+                <div class="no-scroll-table" id="recap-imputation-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PRODUITS</th>
+                                <th>AISSATOU</th>
+                                <th>LENA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="text-align: center;">ACOMPTE SUR APPROVISIONNEMENT</td><td style="text-align: center;"></td><td style="text-align: center;"></td><td style="text-align: center;"></td></tr>
+                            <tr><td style="text-align: center;">AVANCE DE DEMARRAGE</td><td style="text-align: center;">1</td><td style="text-align: center;">1</td><td style="text-align: center;">2</td></tr>
+                            <tr><td style="text-align: center;">BONNE EXECUTION</td><td style="text-align: center;">6</td><td style="text-align: center;">5</td><td style="text-align: center;">11</td></tr>
+                            <tr><td style="text-align: center;">RETENUE DE GARANTIE</td><td style="text-align: center;">5</td><td style="text-align: center;">1</td><td style="text-align: center;">6</td></tr>
+                            <tr><td style="text-align: center;">GARANTIE FINANCIERE</td><td style="text-align: center;"></td><td style="text-align: center;"></td><td style="text-align: center;"></td></tr>
+                            <tr><td style="text-align: center;">SOUMISSION</td><td style="text-align: center;">30</td><td style="text-align: center;">16</td><td style="text-align: center;">46</td></tr>
+                            <tr><td style="text-align: center;">CREDIT INTERIEUR</td><td style="text-align: center;"></td><td style="text-align: center;"></td><td style="text-align: center;"></td></tr>
+                            <tr><td style="text-align: center;">GPES</td><td style="text-align: center;"></td><td style="text-align: center;"></td><td style="text-align: center;"></td></tr>
+                            <tr style="font-weight: bold;">
+                                <td style="text-align: center;">TOTAL</td>
+                                <td style="text-align: center;">42</td>
+                                <td style="text-align: center;">23</td>
+                                <td style="text-align: center;">65</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="aissatou-slide">
+                <h2 class="animated-title hover-zoom" style="margin-bottom: 5px; font-size: 1.6em;">DOSSIERS RECUS DE AISSATOU</h2>
+                <div class="scrollable-table" id="aissatou-slide-table-wrapper" style="max-height: 75vh;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Courrier du Jour</th>
+                                <th>Ref</th>
+                                <th>Client</th>
+                                <th>Produit</th>
+                                <th>Montant</th>
+                                <th>État d'avancement</th>
+                                <th>Date de traitement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>31/10/2025</td><td>8239</td><td>Sanlam Allianz Sénégal Assurances</td><td>S</td><td>2 500 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>2</td><td>31/10/2025</td><td>8233</td><td>GROUPE SPEEDO</td><td>S</td><td>1 200 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>3</td><td>03/11/2025</td><td>8254</td><td>ETS MONDE DES AFFAIRES</td><td>S</td><td>3 500 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>4</td><td>03/11/2025</td><td>8253</td><td>ETS MONDE DES AFFAIRES</td><td>S</td><td>1 000 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>5</td><td>03/11/2025</td><td>8255</td><td>ETS CAMARA BIRANE</td><td>S</td><td>1 000 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>6</td><td>03/11/2025</td><td>8266</td><td>STABURO</td><td>B</td><td>7 371 607</td><td class="etat-traite">TRAITE</td><td>04/11/2025</td></tr>
+                            <tr><td>7</td><td>03/11/2025</td><td></td><td>CAETANO FORMULA</td><td>B</td><td>7 975 000</td><td class="etat-traite">TRAITE</td><td>04/11/2025</td></tr>
+                            <tr><td>8</td><td>03/11/2025</td><td>8264</td><td>CAETANO FORMULA</td><td>B</td><td>5 475 000</td><td class="etat-traite">TRAITE</td><td>04/11/2025</td></tr>
+                            <tr><td>9</td><td>03/11/2025</td><td>8260</td><td>MKL MULTISERVICES</td><td>S</td><td>1 000 000</td><td class="etat-traite">TRAITE</td><td>04/11/2025</td></tr>
+                            <tr><td>10</td><td>03/11/2025</td><td>8262</td><td>PRESTIGE AUTO</td><td>S</td><td>3 800 000</td><td class="etat-traite">TRAITE</td><td>04/11/2025</td></tr>
+                            <tr><td>11</td><td>03/11/2025</td><td>8261</td><td>PRESTIGE AUTO</td><td>S</td><td>4 500 000</td><td class="etat-traite">TRAITE</td><td>04/11/2025</td></tr>
+                            <tr><td>12</td><td>03/11/2025</td><td>8259</td><td>ESEF</td><td>S</td><td>1 554 000</td><td class="etat-traite">TRAITE</td><td>04/11/2025</td></tr>
+                            <tr><td>13</td><td>04/11/2025</td><td>8278</td><td>CAYOR CONSORTIUM D'ENTREPRISE</td><td>S</td><td>30 000 000</td><td class="etat-traite">TRAITE</td><td>05/11/2025</td></tr>
+                            <tr><td>14</td><td>04/11/2025</td><td>8289</td><td>EGCFP-DIOM</td><td>RG</td><td>3 610 594</td><td class="etat-traite">TRAITE</td><td>05/11/2025</td></tr>
+                            <tr><td>15</td><td>05/11/2025</td><td>8293</td><td>SOCIETE INDUSTRIELLE DE CONSTRUCTION METALLIQUE</td><td>S</td><td>2 750 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>16</td><td>05/11/2025</td><td>8312</td><td>EGECOM</td><td>RG</td><td>2 233 763</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>17</td><td>05/11/2025</td><td>8311</td><td>EGECOM</td><td>RG</td><td>13 733 680</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>18</td><td>05/11/2025</td><td>8314</td><td>EGECOM</td><td>RG</td><td>40 350 914</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>19</td><td>05/11/2025</td><td>8313</td><td>EGECOM</td><td>B</td><td>8 403 609</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>20</td><td>05/11/2025</td><td>8316</td><td>Calypso Group</td><td>S</td><td>1 500 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>21</td><td>05/11/2025</td><td>8330</td><td>DIMINTER</td><td>S</td><td>1 050 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>22</td><td>05/11/2025</td><td>8323</td><td>Calypso Group</td><td>S</td><td>7 140 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>23</td><td>05/11/2025</td><td>8331</td><td>DIMINTER</td><td>S</td><td>6 431 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>24</td><td>05/11/2025</td><td>8321</td><td>PICO MEGA</td><td>S</td><td>5 400 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>25</td><td>05/11/2025</td><td>8319</td><td>PICO MEGA</td><td>S</td><td>2 200 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>26</td><td>05/11/2025</td><td>8320</td><td>PICO MEGA</td><td>S</td><td>9 000 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>27</td><td>06/11/2025</td><td>8329</td><td>SOCOSEN</td><td>B</td><td>3 996 600</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>28</td><td>06/11/2025</td><td>8310</td><td>ECORE</td><td>S</td><td>2 000 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>29</td><td>06/11/2025</td><td>8337</td><td>SESA TECHNOLOGIES</td><td>S</td><td>5 400 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>30</td><td>06/11/2025</td><td>8338</td><td>SESA TECHNOLOGIES</td><td>S</td><td>2 200 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>31</td><td>06/11/2025</td><td>8339</td><td>ECORE</td><td>RG</td><td>16 048 413</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>32</td><td>06/11/2025</td><td>8342</td><td>EMS BTP & SERVICES</td><td>B</td><td>1 900 281</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>33</td><td>06/11/2025</td><td>8341</td><td>EMS BTP & SERVICES</td><td>A</td><td>7 601 123</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>34</td><td>05/11/2025</td><td>8322</td><td>SIDECOM</td><td>S</td><td>38 600 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>35</td><td>06/11/2025</td><td>8348</td><td>SICOPRES</td><td>S</td><td>74 600 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>36</td><td>07/11/2025</td><td>8359</td><td>SAREQ GROUP</td><td>S</td><td>538 892</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>37</td><td>07/11/2025</td><td>8360</td><td>SAREQ GROUP</td><td>S</td><td>675 550</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>38</td><td>07/11/2025</td><td>8361</td><td>SAREQ GROUP</td><td>S</td><td>329 031</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>39</td><td>07/11/2025</td><td>8362</td><td>SAREQ GROUP</td><td>S</td><td>346 625</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>40</td><td>07/11/2025</td><td>8365</td><td>MEDIKA GROUP</td><td>S</td><td>137 500 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>41</td><td>07/11/2025</td><td>8364</td><td>SENEGAL WEST AFRICAN NAVIGATION</td><td>S</td><td>1 380 000</td><td class="etat-attente-vide" style="color: white !important;">EN COURS</td><td></td></tr>
+                            <tr><td>42</td><td>07/11/2025</td><td>8356</td><td>CONSORTIUM THIOUNE</td><td>S</td><td>3 500 000</td><td class="etat-attente-vide" style="color: white !important;">EN COURS</td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="lena-slide">
+                <h2 class="animated-title hover-zoom" style="margin-bottom: 5px; font-size: 1.6em;">DOSSIERS RECUS DE LENA</h2>
+                <div class="scrollable-table" id="lena-slide-table-wrapper" style="max-height: 75vh;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Courrier du Jour</th>
+                                <th>Ref</th>
+                                <th>Client</th>
+                                <th>Produit</th>
+                                <th>Montant</th>
+                                <th>État d'avancement</th>
+                                <th>Date de traitement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>03/11/2025</td><td>8210</td><td>KANY ENERGY SERVICES</td><td>S</td><td>1 050 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>2</td><td>03/11/2025</td><td>8249</td><td>TCS ENTREPRISES</td><td>S</td><td>3 000 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>3</td><td>03/11/2025</td><td>8258</td><td>SIREPCOM</td><td>S</td><td>2 200 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>4</td><td>03/11/2025</td><td>8252</td><td>TATA</td><td>S</td><td>800 000</td><td class="etat-traite">TRAITE</td><td>03/11/2025</td></tr>
+                            <tr><td>5</td><td>04/11/2025</td><td>8287</td><td>CREATIVE MOTORS</td><td>B</td><td>10 170 000</td><td class="etat-instruit">INSTRUIT</td><td>05/11/2025</td></tr>
+                            <tr><td>6</td><td>04/11/2025</td><td></td><td>AZKHAR INTERNATIONAL</td><td>A</td><td>1 507 791 766</td><td class="etat-traite">TRAITE</td><td>05/11/2025</td></tr>
+                            <tr><td>7</td><td>04/11/2025</td><td></td><td>AZKHAR INTERNATIONAL</td><td>B</td><td>376 947 942</td><td class="etat-traite">TRAITE</td><td>05/11/2025</td></tr>
+                            <tr><td>8</td><td>05/11/2025</td><td>8279</td><td>AFRICAN BIO EXPERTISE</td><td>S</td><td>4 025 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>9</td><td>05/11/2025</td><td>8295</td><td>STABURO</td><td>B</td><td>7 647 164</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>10</td><td>05/11/2025</td><td>8288</td><td>DIMAT MEDICAL</td><td>S</td><td>350 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>11</td><td>05/11/2025</td><td>8300</td><td>SOCIETE DES TRAVAUX PUBLICS</td><td>S</td><td>5 000 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>12</td><td>05/11/2025</td><td>8301</td><td>AMOUDA UNLIMITED SARL</td><td>B</td><td>4 222 064</td><td style="background-color: #dc3545 !important; color: white !important;">A TRAITER</td><td></td></tr>
+                            <tr><td>13</td><td>06/11/2025</td><td>8317</td><td>CALYPSO GROUP</td><td>S</td><td>2 200 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>14</td><td>06/11/2025</td><td>8318</td><td>CGC ELITE</td><td>S</td><td>6 500 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>15</td><td>06/11/2025</td><td>8302</td><td>STEP IN</td><td>S</td><td>435 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>16</td><td>06/11/2025</td><td>8328</td><td>G3A</td><td>S</td><td>15 000 000</td><td class="etat-traite">TRAITE</td><td>06/11/2025</td></tr>
+                            <tr><td>17</td><td>07/11/2025</td><td>8332</td><td>AFRIQUE CONCEPTION DISTRIBUTION</td><td>S</td><td>6 431 000</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>18</td><td>07/11/2025</td><td>8345</td><td>SAREQ GROUPE</td><td>S</td><td>5 000 000</td><td style="background-color: #dc3545 !important; color: white !important;">A TRAITER</td><td></td></tr>
+                            <tr><td>19</td><td>07/11/2025</td><td>8346</td><td>CAETANO FORMULA SN</td><td>S</td><td>2 250 000</td><td style="background-color: #dc3545 !important; color: white !important;">A TRAITER</td><td></td></tr>
+                            <tr><td>20</td><td>07/11/2025</td><td>8339</td><td>ECORE</td><td>RG</td><td>16 048 413</td><td class="etat-traite">TRAITE</td><td>07/11/2025</td></tr>
+                            <tr><td>21</td><td>07/11/2025</td><td>8347</td><td>GOUNASS IMMOB & SRCES</td><td>B</td><td>15 000 000</td><td style="background-color: #dc3545 !important; color: white !important;">A TRAITER</td><td></td></tr>
+                            <tr><td>22</td><td>07/11/2025</td><td>8358</td><td>MULTI CHOICE</td><td>S</td><td>1 000 000</td><td style="background-color: #dc3545 !important; color: white !important;">A TRAITER</td><td></td></tr>
+                            <tr><td>23</td><td>07/11/2025</td><td>8363</td><td>DHI</td><td>S</td><td>5 000 000</td><td style="background-color: #dc3545 !important; color: white !important;">A TRAITER</td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="gros-dossiers-slide">
+                <h2 class="animated-title hover-zoom">GROS DOSSIERS</h2>
+                <div class="scrollable-table" id="gros-dossiers-slide-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Courrier du Jour</th>
+                                <th>Ref</th>
+                                <th>Client</th>
+                                <th>Produit</th>
+                                <th>Montant</th>
+                                <th>État d'avancement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>04/11/2025</td><td></td><td>AZKHAR INTERNATIONAL</td><td>A</td><td>1 507 791 766</td><td>TRAITE</td></tr>
+                            <tr><td>2</td><td>04/11/2025</td><td></td><td>AZKHAR INTERNATIONAL</td><td>B</td><td>376 947 942</td><td>TRAITE</td></tr>
+                            <tr><td>3</td><td>06/11/2025</td><td>8348</td><td>SICOPRES</td><td>S</td><td>74 600 000</td><td>TRAITE</td></tr>
+                            <tr><td>4</td><td>07/11/2025</td><td>8365</td><td>MEDIKA GROUP</td><td>S</td><td>137 500 000</td><td>TRAITE</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="instance-slide">
+                <h2 class="animated-title hover-zoom" style="margin-bottom: 5px; font-size: 1.6em;">DOSSIERS EN INSTANCE</h2>
+                <div class="scrollable-table" id="instance-slide-table-wrapper" style="max-height: 75vh;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Courrier du Jour</th>
+                                <th>Ref</th>
+                                <th>Client</th>
+                                <th>Produit</th>
+                                <th style="width: 150px;">Montant</th>
+                                <th>État d'avancement</th>
+                                <th>Observations</th>
+                            </tr>
+                        </thead>
+                        <tbody><tr><td></td><td></td><td>E3SKR </td><td>RG</td><td style="width: 150px;">23 145 032</td><td></td><td>PV de reception provisoire </td></tr><tr><td></td><td></td><td>E3SKR </td><td>RG</td><td style="width: 150px;">27 523 810</td><td></td><td>PV de reception provisoire </td></tr><tr><td></td><td></td><td>GETIA INTERNATIONAL</td><td>RG</td><td style="width: 150px;">29 560 818</td><td></td><td>PV de reception provisoire </td></tr><tr><td></td><td></td><td>CG2I</td><td></td><td style="width: 150px;">16 999 665</td><td></td><td></td></tr><tr><td></td><td></td><td>LEDEN GROUP</td><td>B</td><td style="width: 150px;">80 914 000</td><td></td><td>Contrat intégral + references de la societe </td></tr><tr><td></td><td></td><td>ETS TOUBA KHEWEUL LO & FRERES </td><td>A</td><td style="width: 150px;"></td><td></td><td>DOCUMENTS ADMINISTRATIFS </td></tr><tr><td>29/09/2025</td><td>7197</td><td>ENFAC BTP</td><td>A</td><td style="width: 150px;">14 920 628</td><td></td><td>MEMO DU 27/10/2025</td></tr><tr><td>23/10/2025</td><td>8038</td><td>ENTREPRISE BAMBA GENIE CIVIL</td><td>B</td><td style="width: 150px;">31 077 930</td><td></td><td>INSTRUIT LE 29/10/2025</td></tr><tr><td>24/10/2025</td><td>8056</td><td>GROUPE PRANDI</td><td>A</td><td style="width: 150px;">39 763 966</td><td></td><td>INSTRUIT LE 29/10/2025</td></tr><tr><td></td><td>7925</td><td>ESATECH</td><td>A</td><td style="width: 150px;">20 768 000</td><td></td><td>INSTRUIT LE 29/10/2026</td></tr><tr><td>22/09/2025</td><td>7013</td><td>BIA DAKAR</td><td>A</td><td style="width: 150px;">109 724 141</td><td>EN ATTENTE VALIDATION DU MODELE</td><td>EN ATTENTE VALIDATION DU MODELE PAR DANGOTE CEMENT</td></tr><tr><td>25/09/2025</td><td>7129</td><td>SALVI SENEGAL</td><td>AA</td><td style="width: 150px;">5 628 623 874</td><td>en attente de traitement</td><td>En attente de l'état d'avancement du marché de base,  pour finaliser l'instruction N°2</td></tr><tr><td>17/09/2025</td><td>45917</td><td>YMMY HOLDING FINANCE</td><td>AD</td><td style="width: 150px;">3 000 000 000</td><td>INSTRUIT</td><td>EN COURS</td></tr><tr><td>28/07/2025</td><td>5817</td><td>FARYTEC ENGINEERING / QB FOOD</td><td>AD</td><td style="width: 150px;">516 713 208</td><td>INSTRUIT</td><td>ENG+ET+EDR+RE SUR UN BON POUVANT ETRE PRIS EN GARANTIE</td></tr><tr><td>29/07/2025</td><td>5850</td><td>SYGA BATIMENT</td><td>AD+BE</td><td style="width: 150px;">68 882 364</td><td>INSTRUIT</td><td>ATTEND COMPLEMENTS INFOS ODES</td></tr><tr><td>18/08/2025</td><td>6245-6249</td><td>COMPAGNIE GENERALE SERVICES</td><td>AD+BE</td><td style="width: 150px;">21 939 408</td><td>INSTRUIT</td><td>ACS+CCAGP+EDR RECENT</td></tr><tr><td></td><td></td><td>INTERNATIONAL CONSULTING GROUP</td><td>AD</td><td style="width: 150px;">4 999 950</td><td>/INSTRUIT</td><td>FAVEUR COMMUNE LOUGA ATTEND COMPLEMENTS CLIENT INFORME</td></tr><tr><td>26/08/2025</td><td>6433</td><td>BIA MALI/SIMICA AGRERATE</td><td>CI</td><td style="width: 150px;">85 274 410</td><td>A TRAITER</td><td>RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td></tr><tr><td>26/08/2025</td><td>6435</td><td>BIA MALI/BAGAMA MINING</td><td>CI</td><td style="width: 150px;">131 191 400</td><td>A TRAITER</td><td>RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td></tr><tr><td>26/08/2025</td><td>6436</td><td>BIA MALI/SNAF SERVICES</td><td>CI</td><td style="width: 150px;">65 595 700</td><td>A TRAITER</td><td>RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td></tr><tr><td>26/08/2025</td><td>6437</td><td>BIA MALI/INTER MINING SRSCES</td><td>CI</td><td style="width: 150px;">49 196 775</td><td>A TRAITER</td><td>RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td></tr><tr><td>08/09/2025</td><td>6638</td><td>BIA DAKAR / KING FAHD PALACE</td><td>CI</td><td style="width: 150px;">53 566 592</td><td>MEMO</td><td>RETOURNE A LA DIRCOM POUR LA NOTIFICATION</td></tr><tr><td>08/09/2025</td><td>6641</td><td>TECHNOLOGIES SERVICES</td><td>B</td><td style="width: 150px;">24 322 750</td><td>INSTRUIT</td><td>INSTRUIT ATTEND RETOUR</td></tr><tr><td></td><td></td><td>TECHNOLOGIES SERVICES</td><td></td><td style="width: 150px;"></td><td></td><td>POINT ENGAGEMENT+PRIME+ACS</td></tr><tr><td></td><td></td><td>PROBATIS</td><td>BE</td><td style="width: 150px;">15 299 110</td><td>ACBEP</td><td>PT ENGAGEMENT +TITRES +RE+PAH</td></tr></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="credit-locassur-slide">
+                <h2 class="animated-title hover-zoom">CRÉDIT INTÉRIEUR</h2>
+                <div id="credit-locassur-slide-wrapper" class="scrollable-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Courrier du Jour</th>
+                                <th>Ref</th>
+                                <th>Client</th>
+                                <th>Produit</th>
+                                <th style="width: 150px;">Montant</th>
+                                <th>État d'avancement</th>
+                                <th>Exploitant</th>
+                                <th>OBSERVATIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="text-align: center;">1</td><td style="text-align: center;">08-09-2025</td><td style="text-align: center;">6 638</td><td style="text-align: center;">BIA DAKAR/KING FAHD PALACE</td><td style="text-align: center;">CI</td><td style="text-align: center;">267 832 960</td><td class="etat-notification">Notification en cours</td><td style="text-align: center;">B.SY</td><td style="text-align: center;">Notification en cours</td></tr>
+                            <tr><td style="text-align: center;">2</td><td style="text-align: center;">26-08-2025</td><td style="text-align: center;">6 433</td><td style="text-align: center;">BIA MALI/SIMICA AGRERATE</td><td style="text-align: center;">CI</td><td style="text-align: center;">85 274 410</td><td class="etat-attente-vide"></td><td style="text-align: center;">B.SY</td><td style="text-align: center;">EN ATTENTE D'INFORMATIONS SUFFISANTES POUR LE TRAITEMENT</td></tr>
+                            <tr><td style="text-align: center;">3</td><td style="text-align: center;">26-08-2025</td><td style="text-align: center;">6 435</td><td style="text-align: center;">BIA DAKAR/BAGANA MINING</td><td style="text-align: center;">CI</td><td style="text-align: center;">131 191 400</td><td class="etat-attente-vide"></td><td style="text-align: center;">B.SY</td><td style="text-align: center;">EN ATTENTE D'INFORMATIONS SUFFISANTES POUR LE TRAITEMENT</td></tr>
+                            <tr><td style="text-align: center;">4</td><td style="text-align: center;">26-08-2025</td><td style="text-align: center;">6 436</td><td style="text-align: center;">BIA DAKAR/SNAF SERVICES</td><td style="text-align: center;">CI</td><td style="text-align: center;">65 595 700</td><td class="etat-attente-vide"></td><td style="text-align: center;">B.SY</td><td style="text-align: center;">EN ATTENTE D'INFORMATIONS SUFFISANTES POUR LE TRAITEMENT</td></tr>
+                            <tr><td style="text-align: center;">5</td><td style="text-align: center;">26-08-2025</td><td style="text-align: center;">6 437</td><td style="text-align: center;">BIA DAKAR/INTER MINING</td><td style="text-align: center;">CI</td><td style="text-align: center;">49 196 775</td><td class="etat-attente-vide"></td><td style="text-align: center;">B.SY</td><td style="text-align: center;">EN ATTENTE D'INFORMATIONS SUFFISANTES POUR LE TRAITEMENT</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="conclusion-slide">
+                <div style="font-size: 3em; color: #FFD700;">🤝</div>
+                <h1 class="hover-zoom">MERCI POUR VOTRE ATTENTION</h1>
+                <h2 class="hover-zoom" style="color: white;">Direction de l'Arbitrage et des Engagements</h2>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+    const launcher = document.getElementById('launcher');
+    const revealContainer = document.querySelector('.reveal');
+
+    // Initialize Reveal.js as soon as the script is parsed
+    Reveal.initialize({
+        hash: true,
+        width: "100%",
+        height: "100%",
+        margin: 0.04,
+        minScale: 0.2,
+        maxScale: 2.0,
+        transition: 'zoom',
+        plugins: []
+    });
+
+    function launch() {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        }
+        launcher.style.display = 'none';
+        revealContainer.style.display = 'block';
+        
+        // Navigate to the first slide after launching
+        Reveal.slide(0);
+    }
+
+    // Create comparison chart when the slide is activated
+    Reveal.on('slidechanged', event => {
+        if (event.currentSlide.id === 'recap-produit-comparison') {
+            createComparisonChart();
+        }
+    });
+
+    // Also create it if it's the initial slide when the page loads
+    // This needs to be called after Reveal.js is initialized and ready
+    Reveal.on('ready', event => {
+        if (Reveal.getCurrentSlide().id === 'recap-produit-comparison') {
+            createComparisonChart();
+        }
+    });
+
+    function createComparisonChart() {
+        const ctx = document.getElementById('comparisonChart');
+        if (!ctx || ctx.chart) return;
+
+        const labels = ['Avance Démarrage', 'Bonne Exécution', 'Retenue Garantie', 'Soumission', 'TOTAL'];
+        
+        ctx.chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Nombre S-1',
+                        data: [5, 9, 3, 45, 62],
+                        backgroundColor: 'rgba(255, 215, 0, 0.6)',
+                        borderColor: 'rgba(255, 215, 0, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y',
+                        order: 2
+                    },
+                    {
+                        label: 'Nombre S',
+                        data: [2, 11, 6, 46, 65],
+                        backgroundColor: 'rgba(100, 200, 255, 0.6)',
+                        borderColor: 'rgba(100, 200, 255, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y',
+                        order: 2
+                    },
+                    {
+                        label: 'Engagements S-1',
+                        data: [121013180, 77380590, 58918842, 470628415, 727941027],
+                        type: 'line',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        tension: 0.3,
+                        fill: false,
+                        yAxisID: 'y1',
+                        order: 1
+                    },
+                    {
+                        label: 'Engagements S',
+                        data: [1515392889, 449109267, 92025777, 409339765, 2465867698],
+                        type: 'line',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        tension: 0.3,
+                        fill: false,
+                        yAxisID: 'y1',
+                        order: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: { duration: 1500, easing: 'easeInOutQuart' },
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#FFFFFF', font: { size: 11 } }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Comparatif par Produit : Nombre de Dossiers et Engagements',
+                        color: '#FFD700',
+                        font: { size: 14, weight: 'bold' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) { label += ': '; }
+                                if (context.parsed.y !== null) {
+                                    if (context.dataset.type === 'line') {
+                                        label += new Intl.NumberFormat('fr-FR').format(context.parsed.y);
+                                    } else {
+                                        label += context.parsed.y;
+                                    }
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Nombre de Dossiers',
+                            color: '#FFFFFF'
+                        },
+                        ticks: { color: '#FFFFFF' },
+                        grid: { display: false }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Engagements (FCFA)',
+                            color: '#FFFFFF'
+                        },
+                        ticks: {
+                            color: '#FFFFFF',
+                            callback: function(value) {
+                                if (value >= 1000000000) return (value / 1000000000).toFixed(1) + ' Mrd';
+                                if (value >= 1000000) return (value / 1000000).toFixed(0) + ' M';
+                                return value;
+                            }
+                        },
+                        grid: {
+                            drawOnChartArea: false, 
+                        }
+                    },
+                    x: {
+                        ticks: { color: '#FFFFFF', font: { size: 10 } },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    }
+                }
+            }
+        });
+    }
+
+    launcher.addEventListener('click', launch);
+    </script>
+</body>
+</html>
