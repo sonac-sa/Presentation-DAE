@@ -248,18 +248,20 @@ tbody tr:hover {
     outline: 1px solid var(--main-yellow); /* Ajout d'une bordure pour un meilleur effet */
 }
 
-/* Animation pour les titres */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -40px, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+/* Animation pour la main qui salue */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(14deg); }
+    30% { transform: rotate(-8deg); }
+    45% { transform: rotate(14deg); }
+    60% { transform: rotate(-4deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
 }
 
-.reveal .slides .present .animated-title {
-    animation: fadeInDown 1s ease-out forwards;
+.waving-hand {
+    animation: wave 2.5s infinite; /* L'animation dure 2.5s et se répète à l'infini */
+    transform-origin: 70% 70%; /* Point de pivot pour l'animation */
+    display: inline-block; /* Pour que la transformation fonctionne correctement */
 }
+
