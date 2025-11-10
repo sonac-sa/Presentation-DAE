@@ -1,0 +1,265 @@
+.etat-traite {
+    background-color: #28a745 !important;
+    color: white !important;
+}
+
+.etat-instruit {
+    background-color: #ffc107 !important;
+    color: black !important;
+}
+
+.etat-instruction {
+    background-color: #ffc107 !important;
+    color: black !important;
+}
+
+/* Ajustements pour les tableaux scrollables */
+.scrollable-table {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    width: 100%;
+}
+
+.scrollable-table table {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.scrollable-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--main-yellow) !important;
+}
+
+.scrollable-table thead th {
+    background-color: var(--main-yellow) !important;
+    color: var(--main-blue) !important;
+}
+
+/* Hauteurs spécifiques pour chaque slide */
+#aissatou-slide .scrollable-table {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#balla-slide .scrollable-table {
+    max-height: 65vh;
+}
+
+#lena-slide .scrollable-table {
+    max-height: 65vh;
+}
+
+#gros-dossiers-slide .scrollable-table {
+    max-height: 65vh;
+}
+
+#instance-slide .scrollable-table {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#credit-locassur-slide .scrollable-table {
+    max-height: 65vh;
+}
+
+/* Ajustement des tailles de police pour les tableaux scrollables */
+#aissatou-slide table {
+    font-size: 0.58em;
+    line-height: 1.3;
+}
+
+#balla-slide table {
+    font-size: 0.58em;
+    line-height: 1.3;
+}
+
+#lena-slide table {
+    font-size: 0.62em;
+    line-height: 1.3;
+}
+
+#gros-dossiers-slide table {
+    font-size: 0.65em;
+    line-height: 1.3;
+}
+
+#instance-slide table {
+    font-size: 0.58em;
+    line-height: 1.3;
+}
+
+#credit-locassur-slide table {
+    font-size: 0.55em;
+    line-height: 1.3;
+}
+
+/* Padding réduit pour les cellules dans les tableaux scrollables */
+.scrollable-table th,
+.scrollable-table td {
+    padding: 3px 4px;
+    height: auto;
+}
+
+/* Supprimer la classe scrollable-x qui peut causer des conflits */
+.scrollable-x {
+    overflow-x: hidden !important;
+}
+
+:root {
+    --main-blue: #1a4d7a;
+    --main-yellow: #FFD700;
+    --text-color: #FFFFFF;
+    --border-color: #FFD700;
+}
+
+.reveal {
+    background-color: var(--main-blue);
+    position: relative;
+}
+
+.reveal::before {
+    content: 'DAE';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 12em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.03);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 4px;
+    text-align: center !important;
+    word-wrap: break-word;
+    white-space: normal;
+    vertical-align: middle;
+    color: var(--text-color);
+}
+
+/* Effet de survol et zoom */
+.hover-zoom {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* Titres des tableaux en jaune avec texte bleu foncé */
+thead th {
+    background-color: var(--main-yellow) !important;
+    color: var(--main-blue) !important; /* Texte bleu foncé pour lisibilité sur fond jaune vif */
+}
+
+/* Titres des tableaux scrollables en jaune avec texte bleu foncé */
+.scrollable-table thead th {
+    background-color: var(--main-yellow) !important;
+    color: var(--main-blue) !important; /* Texte bleu foncé pour lisibilité sur fond jaune vif */
+}
+
+/* Ajustement des tailles de police pour les tableaux scrollables */
+#aissatou-slide table {
+    font-size: 0.58em;
+    line-height: 1.3;
+}
+
+#balla-slide table {
+    font-size: 0.58em;
+    line-height: 1.3;
+}
+
+#lena-slide table {
+    font-size: 0.62em;
+    line-height: 1.3;
+}
+
+#gros-dossiers-slide table {
+    font-size: 0.65em;
+    line-height: 1.3;
+}
+
+#instance-slide table {
+    font-size: 0.58em;
+    line-height: 1.3;
+}
+
+#credit-locassur-slide table {
+    font-size: 0.55em;
+    line-height: 1.3;
+}
+
+/* Padding réduit pour les cellules dans les tableaux scrollables */
+.scrollable-table th,
+.scrollable-table td {
+    padding: 3px 4px;
+    height: auto;
+}
+
+#launcher {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d2c4f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    cursor: pointer;
+}
+
+#launcher img {
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 30px;
+    object-fit: contain;
+}
+
+#launcher h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #FFD700;
+}
+
+#launcher p {
+    font-size: 1.2em;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 215, 0, 0.2);
+    outline: 1px solid var(--main-yellow); /* Ajout d'une bordure pour un meilleur effet */
+}
+
+/* Animation pour les titres */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.reveal .slides .present .animated-title {
+    animation: fadeInDown 1s ease-out forwards;
+}
