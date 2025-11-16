@@ -1,3 +1,46 @@
+@keyframes float-emoji {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-15px) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
+    75% { transform: translateY(-20px) rotate(3deg); }
+}
+
+.floating-emoji {
+    will-change: transform;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    animation: float-emoji 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+/* Animation titre slide (fade et scale) */
+@keyframes slideInTitle {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slides section.present h1,
+.slides section.present h2 {
+    animation: slideInTitle 2s ease-in forwards;
+    animation-delay: 0.3s;
+}
+@keyframes emoji-swing {
+    0% { transform: translateY(0) rotate(-12deg); }
+    20% { transform: translateY(-8px) rotate(8deg); }
+    40% { transform: translateY(-12px) rotate(-8deg); }
+    60% { transform: translateY(-8px) rotate(8deg); }
+    80% { transform: translateY(-4px) rotate(-8deg); }
+    100% { transform: translateY(0) rotate(-12deg); }
+}
+
+.emoji-swing {
+    display: inline-block;
+    will-change: transform;
+    animation: emoji-swing 2.2s cubic-bezier(.36,.07,.19,.97) infinite alternate;
+}
 .etat-traite {
     background-color: #28a745 !important;
     color: white !important;
