@@ -1,0 +1,396 @@
+/* 
+   PREMIUM THEME - SONAC DAE PRESENTATION 
+   Style: Corporate, Gold & Deep Navy, Glassmorphism
+*/
+
+/* --- 1. TYPOGRAPHY & FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+
+:root {
+    /* Palette de couleurs Premium */
+    --bg-deep: #051937;
+    --bg-gradient: radial-gradient(circle at center, #1a4d7a 0%, #051937 100%);
+
+    --gold-primary: #D4AF37;
+    --gold-light: #F2D06B;
+    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F2D06B 100%);
+
+    --text-main: #E6F1FF;
+    --text-muted: #A8B2D1;
+
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --danger-color: #e74c3c;
+}
+
+body,
+.reveal {
+    font-family: 'Inter', sans-serif !important;
+    color: var(--text-main) !important;
+    background: var(--bg-deep) !important;
+    background-image: var(--bg-gradient) !important;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    font-family: 'Montserrat', sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 2. GLASSMORPHISM CONTAINERS --- */
+
+/* Appliquer l'effet verre aux tableaux et conteneurs principaux */
+.reveal table {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--glass-shadow) !important;
+    overflow: hidden;
+    border-collapse: separate !important;
+    /* Nécessaire pour le border-radius */
+    border-spacing: 0;
+}
+
+.reveal thead th {
+    background: linear-gradient(135deg, #D4AF37 0%, #F2D06B 100%) !important;
+    /* Gold Gradient Background */
+    color: #051937 !important;
+    /* Deep Navy Text */
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid #051937 !important;
+    text-shadow: none !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    white-space: normal !important;
+    /* Allow line breaks when needed */
+    word-break: keep-all !important;
+    /* Prevent word breaks - only break between words */
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    /* No hyphenation */
+    padding: 12px 8px !important;
+    line-height: 1.4 !important;
+    min-width: 80px !important;
+    /* Minimum width to avoid too narrow columns */
+    max-width: 150px !important;
+    /* Maximum width to force wrapping on long headers */
+}
+
+.reveal th,
+.reveal td {
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 8px 10px !important;
+    color: var(--text-main);
+    /* No !important here to allow status colors to override */
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Ensure proper centering for table cells carrying badge elements */
+.reveal td {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Hover effect sur les lignes */
+.reveal tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.reveal tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* --- 3. STATUS STYLES --- */
+
+/* Base status cell styling - simple colored text */
+.etat-traite,
+.etat-instruit,
+.etat-attente,
+.etat-rejet,
+.etat-a-traiter,
+.etat-en-cours {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Force perfect centering of cells containing status badges */
+.reveal td.etat-traite,
+.reveal td.etat-instruit,
+.reveal td.etat-attente,
+.reveal td.etat-rejet,
+.reveal td.etat-a-traiter,
+.reveal td.etat-en-cours {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* --- Specific styles for IMPUTATIONS table --- */
+.table-imputation th {
+    font-size: 0.75em !important;
+    /* Smaller font for headers */
+    padding: 12px 5px !important;
+    /* Less horizontal padding to avoid overlap */
+    white-space: nowrap !important;
+    /* Keep headers on one line */
+}
+
+.table-imputation td {
+    padding: 10px 8px !important;
+}
+
+/* --- SIMPLIFIED STATUS DISPLAY (colored text with subtle background) --- */
+
+/* More specific selectors to override default td color */
+.reveal td.etat-traite {
+    color: #2ecc71 !important;
+    /* Bright green text for completed */
+    background-color: rgba(46, 204, 113, 0.15) !important;
+    /* Subtle green background */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px;
+    padding: 4px 8px !important;
+    border-radius: 4px;
+}
+
+.reveal td.etat-instruit,
+.reveal td.etat-instruction {
+    color: #f39c12 !important;
+    /* Orange text for in progress */
+    background-color: rgba(243, 156, 18, 0.15) !important;
+    /* Subtle orange background */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px;
+    padding: 4px 8px !important;
+    border-radius: 4px;
+}
+
+.reveal td.etat-attente,
+.reveal td.etat-attente-vide {
+    color: #e74c3c !important;
+    /* Red text for waiting */
+    background-color: rgba(231, 76, 60, 0.15) !important;
+    /* Subtle red background */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px;
+    padding: 4px 8px !important;
+    border-radius: 4px;
+}
+
+/* A TRAITER state - same red styling as attente */
+.reveal td.etat-a-traiter {
+    color: #e74c3c !important;
+    /* Red text */
+    background-color: rgba(231, 76, 60, 0.15) !important;
+    /* Subtle red background */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px;
+    padding: 4px 8px !important;
+    border-radius: 4px;
+}
+
+/* EN COURS state - red styling (only for exact text "en cours", not when followed by other text) */
+.reveal td.etat-en-cours {
+    color: #e74c3c !important;
+    /* Red text */
+    background-color: rgba(231, 76, 60, 0.15) !important;
+    /* Subtle red background */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px;
+    padding: 4px 8px !important;
+    border-radius: 4px;
+}
+
+/* --- 4. ANIMATIONS --- */
+
+/* Fade In Up en cascade pour les lignes de tableau */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.reveal tbody tr {
+    animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    /* Caché par défaut avant l'animation */
+}
+
+/* Délais en cascade (jusqu'à 20 lignes) */
+.reveal tbody tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.reveal tbody tr:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.reveal tbody tr:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.reveal tbody tr:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.reveal tbody tr:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.reveal tbody tr:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.reveal tbody tr:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.reveal tbody tr:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.reveal tbody tr:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.reveal tbody tr:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+/* ... et ainsi de suite pour les autres si besoin */
+
+/* Pulse animation pour le logo ou éléments importants */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+.pulse-effect {
+    animation: pulse-glow 2s infinite;
+    border-radius: 50%;
+}
+
+/* --- 5. LAUNCHER SCREEN --- */
+#launcher {
+    background: radial-gradient(circle at center, #1a4d7a 0%, #051937 100%) !important;
+}
+
+#launcher h1 {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5em;
+    letter-spacing: 2px;
+}
+
+#launcher p {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Bouton stylisé pour le launcher */
+.launcher-btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+}
+
+.launcher-btn:hover {
+    background: var(--gold-primary);
+    color: #051937;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* --- 6. SPECIFIC OVERRIDES --- */
+
+/* Ajustement scrollbar pour Chrome/Safari */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.6);
+}
+
+/* Suppression des bordures jaunes agressives de l'ancien CSS */
+th,
+td {
+    border: none !important;
+    /* Override custom.css */
+}
+
+/* Ajustement des titres de slides */
+.reveal h2.animated-title {
+    border-bottom: 2px solid var(--gold-primary);
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}

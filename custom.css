@@ -1,15 +1,6 @@
-@keyframes float-emoji {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    25% { transform: translateY(-15px) rotate(5deg); }
-    50% { transform: translateY(-10px) rotate(-5deg); }
-    75% { transform: translateY(-20px) rotate(3deg); }
-}
-
+/* Animation supprimée pour style pro */
 .floating-emoji {
-    will-change: transform;
-    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
-    animation: float-emoji 3s ease-in-out infinite;
-    display: inline-block;
+    display: none;
 }
 
 /* Animation titre slide (fade et scale) */
@@ -17,6 +8,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -27,20 +19,39 @@
     animation: slideInTitle 2s ease-in forwards;
     animation-delay: 0.3s;
 }
+
 @keyframes emoji-swing {
-    0% { transform: translateY(0) rotate(-12deg); }
-    20% { transform: translateY(-8px) rotate(8deg); }
-    40% { transform: translateY(-12px) rotate(-8deg); }
-    60% { transform: translateY(-8px) rotate(8deg); }
-    80% { transform: translateY(-4px) rotate(-8deg); }
-    100% { transform: translateY(0) rotate(-12deg); }
+    0% {
+        transform: translateY(0) rotate(-12deg);
+    }
+
+    20% {
+        transform: translateY(-8px) rotate(8deg);
+    }
+
+    40% {
+        transform: translateY(-12px) rotate(-8deg);
+    }
+
+    60% {
+        transform: translateY(-8px) rotate(8deg);
+    }
+
+    80% {
+        transform: translateY(-4px) rotate(-8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-12deg);
+    }
 }
 
 .emoji-swing {
     display: inline-block;
     will-change: transform;
-    animation: emoji-swing 2.2s cubic-bezier(.36,.07,.19,.97) infinite alternate;
+    animation: emoji-swing 2.2s cubic-bezier(.36, .07, .19, .97) infinite alternate;
 }
+
 .etat-traite {
     background-color: #28a745 !important;
     color: white !important;
@@ -181,7 +192,8 @@
     user-select: none;
 }
 
-th, td {
+th,
+td {
     border: 1px solid var(--border-color);
     padding: 4px;
     text-align: center !important;
@@ -203,13 +215,15 @@ th, td {
 /* Titres des tableaux en jaune avec texte bleu foncé */
 thead th {
     background-color: var(--main-yellow) !important;
-    color: var(--main-blue) !important; /* Texte bleu foncé pour lisibilité sur fond jaune vif */
+    color: var(--main-blue) !important;
+    /* Texte bleu foncé pour lisibilité sur fond jaune vif */
 }
 
 /* Titres des tableaux scrollables en jaune avec texte bleu foncé */
 .scrollable-table thead th {
     background-color: var(--main-yellow) !important;
-    color: var(--main-blue) !important; /* Texte bleu foncé pour lisibilité sur fond jaune vif */
+    color: var(--main-blue) !important;
+    /* Texte bleu foncé pour lisibilité sur fond jaune vif */
 }
 
 /* Ajustement des tailles de police pour les tableaux scrollables */
@@ -288,23 +302,46 @@ thead th {
 
 tbody tr:hover {
     background-color: rgba(255, 215, 0, 0.2);
-    outline: 1px solid var(--main-yellow); /* Ajout d'une bordure pour un meilleur effet */
+    outline: 1px solid var(--main-yellow);
+    /* Ajout d'une bordure pour un meilleur effet */
 }
 
 /* Animation pour la main qui salue */
 @keyframes wave {
-    0% { transform: rotate(0deg); }
-    15% { transform: rotate(14deg); }
-    30% { transform: rotate(-8deg); }
-    45% { transform: rotate(14deg); }
-    60% { transform: rotate(-4deg); }
-    75% { transform: rotate(10deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(14deg);
+    }
+
+    30% {
+        transform: rotate(-8deg);
+    }
+
+    45% {
+        transform: rotate(14deg);
+    }
+
+    60% {
+        transform: rotate(-4deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .waving-hand {
-    animation: wave 2.5s infinite; /* L'animation dure 2.5s et se répète à l'infini */
-    transform-origin: 70% 70%; /* Point de pivot pour l'animation */
-    display: inline-block; /* Pour que la transformation fonctionne correctement */
+    animation: wave 2.5s infinite;
+    /* L'animation dure 2.5s et se répète à l'infini */
+    transform-origin: 70% 70%;
+    /* Point de pivot pour l'animation */
+    display: inline-block;
+    /* Pour que la transformation fonctionne correctement */
 }
-
