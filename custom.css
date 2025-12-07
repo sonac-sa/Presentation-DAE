@@ -345,3 +345,34 @@ tbody tr:hover {
     display: inline-block;
     /* Pour que la transformation fonctionne correctement */
 }
+
+/* Règle globale pour centrer tout le contenu des cellules de tableau */
+.reveal table th,
+.reveal table td {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+#recap-imputation table {
+    font-size: 0.8em;
+    line-height: 1.3;
+}
+
+/* Responsivité pour les écrans 13-14 pouces */
+@media screen and (max-width: 1400px) {
+    .slides section h2 {
+        font-size: 1.3em !important;
+    }
+
+    .scrollable-table table,
+    .reveal table {
+        font-size: 0.5em !important;
+    }
+
+    .scrollable-table th,
+    .scrollable-table td,
+    .reveal table th,
+    .reveal table td {
+        padding: 2px 3px !important;
+    }
+}

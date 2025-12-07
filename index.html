@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Présentation DAE - 01/12/2025</title>
+    <title>Présentation DAE - 08/12/2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
@@ -134,41 +134,37 @@
     <div class="reveal" style="display: none;">
         <div class="slides">
             <section class="title-slide">
-                <!-- Emblème DAE avec animation -->
+                <!-- Style pour l'animation de balancement -->
+                <style>
+                    @keyframes balance-sway-presentation {
+
+                        0%,
+                        100% {
+                            transform: rotate(-5deg);
+                        }
+
+                        50% {
+                            transform: rotate(5deg);
+                        }
+                    }
+
+                    .dae-balance {
+                        animation: balance-sway-presentation 6s ease-in-out infinite;
+                        transform-origin: top center;
+                        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+                    }
+                </style>
+
+                <!-- SVG Balance (Lucide) -->
                 <div style="text-align: center; margin-top: 5vh; margin-bottom: 2vh;">
-                    <svg width="120" height="120" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        aria-labelledby="emojiTitle emojiDesc" role="img" class="dae-emblem">
-                        <title id="emojiTitle">Icône Emoji Protection et Arbitrage</title>
-                        <desc id="emojiDesc">Un emblème de style emoji moderne montrant un bouclier bleu avec un pivot
-                            central jaune équilibrant deux segments bleu clair.</desc>
-
-                        <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
-                            <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-                            <feOffset in="blur" dx="0" dy="2" result="offsetBlur" />
-                            <feFlood flood-color="#000000" flood-opacity="0.2" result="offsetColor" />
-                            <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetShadow" />
-                            <feMerge>
-                                <feMergeNode in="offsetShadow" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-
-                        <g filter="url(#softShadow)">
-                            <path
-                                d="M64 118C96 102 114 78 114 42C114 28 114 22 114 22L64 6L14 22C14 22 14 28 14 42C14 78 32 102 64 118Z"
-                                fill="white" />
-                            <path
-                                d="M64 112C92.5 97.5 108 75.5 108 43C108 30.5 108 25.5 108 25.5L64 11.5L20 25.5C20 25.5 20 30.5 20 43C20 75.5 35.5 97.5 64 112Z"
-                                fill="#2C3E50" />
-
-                            <path d="M64 112C35.5 97.5 20 75.5 20 43C20 38 20.5 34 21.5 30L64 45V112Z" fill="#3498DB" />
-                            <path d="M64 112C92.5 97.5 108 75.5 108 43C108 38 107.5 34 106.5 30L64 45V112Z"
-                                fill="#3498DB" />
-
-                            <circle cx="64" cy="45" r="14" fill="#F1C40F" />
-                            <path d="M58 45L62 49L70 41" stroke="white" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </g>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                        class="dae-balance">
+                        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                        <path d="M7 21h10" />
+                        <path d="M12 3v18" />
+                        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
                     </svg>
                 </div>
 
@@ -177,11 +173,11 @@
 
                 <h3
                     style="color: #F2D06B; font-size: 1.2em; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px;">
-                    01 DÉCEMBRE 2025</h3>
+                    08 DÉCEMBRE 2025</h3>
 
                 <h2 class="subtitle-fade"
                     style="font-style: italic; font-size: 1.1em; color: #A8B2D1; margin-top: 3em; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: inline-block;">
-                    État d'avancement des dossiers du 24 AU 28 NOVEMBRE 2025
+                    État d'avancement des dossiers du 01 AU 05 DECEMBRE 2025
                 </h2>
             </section>
             <section class="agenda-slide">
@@ -224,63 +220,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="text-align: center;">ACOMPTE SUR APPROVISIONNEMENT</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">AVANCE DE DEMARRAGE</td>
-                                <td style="text-align: center;">6</td>
-                                <td style="text-align: center;">805 634 545</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">BONNE EXECUTION</td>
-                                <td style="text-align: center;">15</td>
-                                <td style="text-align: center;">189 112 998</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">RETENUE DE GARANTIE</td>
-                                <td style="text-align: center;">2</td>
-                                <td style="text-align: center;">3 322 901</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">GARANTIE FINANCIERE</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">GARANTIE DE PAIEMENT</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">SOUMISSION</td>
-                                <td style="text-align: center;">57</td>
-                                <td style="text-align: center;">873 126 292</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">CREDIT INTERIEUR</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">GPES</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">TOTAL</td>
-                                <td style="text-align: center;">80</td>
-                                <td style="text-align: center;">1 871 196 736</td>
-                            </tr>
-                        </tbody>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">ACOMPTE SUR APPROVISIONNEMENT</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">1</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">590 280 000</td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">AVANCE DE DEMARRAGE</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">7</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">587 625 841</td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">BONNE EXECUTION</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">14</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">772 962 655</td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">RETENUE DE GARANTIE</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">5</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">655 534 574</td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">GARANTIE FINANCIERE (CCA)</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">3</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">30 000 000</td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">GARANTIE FINANCIERE (CSI)</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">1</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">202 499 500</td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">GARANTIE DE PAIEMENT</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px"></td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px"></td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">SOUMISSION</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">35</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">289 856 552</td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">CREDIT INTERIEUR</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px"></td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px"></td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">GPES</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px"></td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px"></td></tr>
+<tr><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">TOTAL</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">66</td><td style="text-align: center; border: 1px solid #FFD700; padding: 6px">3 128 759 122</td></tr>
+</tbody>
                     </table>
                 </div>
             </section>
             <section id="recap-imputation">
                 <h2 class="animated-title hover-zoom">ÉTAT RÉCAPITULATIF DES IMPUTATIONS</h2>
-                <div class="no-scroll-table" id="recap-imputation-table-wrapper">
+                <div class="no-scroll-table" id="recap-imputation-table-wrapper" style="padding-bottom: 20px;">
                     <table class="table-imputation">
                         <thead>
                             <tr>
@@ -292,77 +249,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="text-align: center;">ACOMPTE SUR APPROVISIONNEMENT</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">AVANCE DE DEMARRAGE</td>
-                                <td style="text-align: center;">1</td>
-                                <td style="text-align: center;">3</td>
-                                <td style="text-align: center;">2</td>
-                                <td style="text-align: center;">6</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">BONNE EXECUTION</td>
-                                <td style="text-align: center;">6</td>
-                                <td style="text-align: center;">4</td>
-                                <td style="text-align: center;">5</td>
-                                <td style="text-align: center;">15</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">RETENUE DE GARANTIE</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">2</td>
-                                <td style="text-align: center;">2</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">GARANTIE FINANCIERE</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">GARANTIE DE PAIEMENT</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">SOUMISSION</td>
-                                <td style="text-align: center;">21</td>
-                                <td style="text-align: center;">15</td>
-                                <td style="text-align: center;">21</td>
-                                <td style="text-align: center;">57</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">CREDIT INTERIEUR</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">GPES</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">TOTAL</td>
-                                <td style="text-align: center;">28</td>
-                                <td style="text-align: center;">22</td>
-                                <td style="text-align: center;">30</td>
-                                <td style="text-align: center;">80</td>
-                            </tr>
-                        </tbody>
+<tr><td style="text-align: center">ACOMPTE SUR APPROVISIONNEMENT</td><td style="text-align: center"></td><td style="text-align: center">1</td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">AVANCE DE DEMARRAGE</td><td style="text-align: center">3</td><td style="text-align: center">3</td><td style="text-align: center">1</td><td style="text-align: center">7</td></tr>
+<tr><td style="text-align: center">BONNE EXECUTION</td><td style="text-align: center">6</td><td style="text-align: center">7</td><td style="text-align: center">1</td><td style="text-align: center">14</td></tr>
+<tr><td style="text-align: center">RETENUE DE GARANTIE</td><td style="text-align: center"></td><td style="text-align: center">3</td><td style="text-align: center">2</td><td style="text-align: center">5</td></tr>
+<tr><td style="text-align: center">GARANTIE FINANCIERE (CCA)</td><td style="text-align: center">2</td><td style="text-align: center"></td><td style="text-align: center">1</td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center">GARANTIE FINANCIERE (CSI)</td><td style="text-align: center"></td><td style="text-align: center">1</td><td style="text-align: center"></td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">GARANTIE DE PAIEMENT</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">SOUMISSION</td><td style="text-align: center">13</td><td style="text-align: center">11</td><td style="text-align: center">11</td><td style="text-align: center">35</td></tr>
+<tr><td style="text-align: center">CREDIT INTERIEUR</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">GPES</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">TOTAL</td><td style="text-align: center">24</td><td style="text-align: center">26</td><td style="text-align: center">16</td><td style="text-align: center">66</td></tr>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -384,287 +282,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>24/11/2025</td>
-                                <td>8 682</td>
-                                <td>PERFORMANCES SERVICES SURL </td>
-                                <td>S</td>
-                                <td>1 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>24/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>24/11/2025</td>
-                                <td>8 680</td>
-                                <td>ATLAS MEDICAL </td>
-                                <td>S</td>
-                                <td>2 800 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>24/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>24/11/2025</td>
-                                <td>8 681</td>
-                                <td>PERFORMANCES SERVICES SURL </td>
-                                <td>S</td>
-                                <td>14 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>24/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>13/11/2025</td>
-                                <td>8 485</td>
-                                <td>EMG UNIVERSAL AUTO </td>
-                                <td>B</td>
-                                <td>4 200 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>13/11/2025</td>
-                                <td>8 487</td>
-                                <td>EMG UNIVERSAL AUTO </td>
-                                <td>B</td>
-                                <td>1 730 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>13/11/2025</td>
-                                <td>8 486</td>
-                                <td>EMG UNIVERSAL AUTO </td>
-                                <td>B</td>
-                                <td>4 290 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>13/11/2025</td>
-                                <td></td>
-                                <td>EMG UNIVERSAL AUTO </td>
-                                <td>B</td>
-                                <td>6 685 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>24/11/2025</td>
-                                <td>8 691</td>
-                                <td>WORDLWIDE TRADING AND ENGINEERING </td>
-                                <td>A</td>
-                                <td>80 438 400</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>24/11/2025</td>
-                                <td>8 725</td>
-                                <td>Carrefour Médical</td>
-                                <td>S</td>
-                                <td>6 431 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>25/11/2025</td>
-                                <td>8 753</td>
-                                <td>CAYOR CONSORTIUM D’ENTREPRISE </td>
-                                <td>S</td>
-                                <td>9 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>24/11/2025</td>
-                                <td>8 722</td>
-                                <td>SONAM</td>
-                                <td>S</td>
-                                <td>62 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>25/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>25/11/2025</td>
-                                <td>8 755</td>
-                                <td>BTD PROYECTOS 12</td>
-                                <td>S</td>
-                                <td>150 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>26/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>25/11/2025</td>
-                                <td>8 755</td>
-                                <td>BTD PROYECTOS 12</td>
-                                <td>S</td>
-                                <td>100 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>26/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td>25/11/2025</td>
-                                <td>8 754</td>
-                                <td>BTD PROYECTOS 12</td>
-                                <td>S</td>
-                                <td>150 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>26/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>15</td>
-                                <td>25/11/2025</td>
-                                <td>8 769</td>
-                                <td>DAROU SALAM DOUYOLY </td>
-                                <td>B</td>
-                                <td>700 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>26/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>16</td>
-                                <td>25/11/2025</td>
-                                <td>8 770</td>
-                                <td>DAROU SALAM DOUYOLY </td>
-                                <td>B</td>
-                                <td>698 950</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>26/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td>26/11/2025</td>
-                                <td>8 777</td>
-                                <td>EVOTECH EQUIPEMENT & SOLUTIONS </td>
-                                <td>S</td>
-                                <td>824 200</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>27/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>18</td>
-                                <td>26/11/2025</td>
-                                <td>8 774</td>
-                                <td>E3SKR</td>
-                                <td>S</td>
-                                <td>1 500 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>27/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>19</td>
-                                <td>26/11/2025</td>
-                                <td>8 792</td>
-                                <td>OFFICE CHOICE</td>
-                                <td>S</td>
-                                <td>9 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>27/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>26/11/2025</td>
-                                <td>8 793</td>
-                                <td>OFFICE CHOICE</td>
-                                <td>S</td>
-                                <td>2 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>27/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>21</td>
-                                <td>26/11/2025</td>
-                                <td>8 791</td>
-                                <td>OFFICE CHOICE</td>
-                                <td>S</td>
-                                <td>14 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>27/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>22</td>
-                                <td>27/11/2025</td>
-                                <td>8 810</td>
-                                <td>ASKIA ASSURANCES </td>
-                                <td>S</td>
-                                <td>1 200 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>28/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>23</td>
-                                <td>27/11/2025</td>
-                                <td>8 811</td>
-                                <td>ASKIA ASSURANCES </td>
-                                <td>S</td>
-                                <td>2 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>28/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>24</td>
-                                <td>27/11/2025</td>
-                                <td>8 836</td>
-                                <td>SSM SENEGAL </td>
-                                <td>S</td>
-                                <td>1 481 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>28/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>25</td>
-                                <td>27/11/2025</td>
-                                <td>8 809</td>
-                                <td>GROUPE SPEEDO </td>
-                                <td>S</td>
-                                <td>3 200 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>28/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>26</td>
-                                <td>27/11/2025</td>
-                                <td>8 828</td>
-                                <td>E3SKR</td>
-                                <td>S</td>
-                                <td>3 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>28/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>27</td>
-                                <td>28/11/2025</td>
-                                <td>8 854</td>
-                                <td>SERVICES TEAM SARL </td>
-                                <td>S</td>
-                                <td>9 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>28/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>28</td>
-                                <td>28/11/2025</td>
-                                <td>8 855</td>
-                                <td>GRAPHI’DESIGN</td>
-                                <td>S</td>
-                                <td>12 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>28/11/2025</td>
-                            </tr>
-                        </tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8863</td><td style="text-align: center">TECHNOLOGIES SERVICES </td><td style="text-align: center">S</td><td style="text-align: center">1 779 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">01/12/2025</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8870</td><td style="text-align: center">KHABANE GLOBAL</td><td style="text-align: center">B</td><td style="text-align: center">7 500 000</td><td class="etat-instruit" style="text-align: center">INSTRUCTION</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8878</td><td style="text-align: center">DIMINTER</td><td style="text-align: center">S</td><td style="text-align: center">1 365 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8895</td><td style="text-align: center">SOPASEC</td><td style="text-align: center">S</td><td style="text-align: center">2 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8894</td><td style="text-align: center">ETS MADIYANA B.F</td><td style="text-align: center">S</td><td style="text-align: center">2 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8888</td><td style="text-align: center">IMMO MEDIC </td><td style="text-align: center">S</td><td style="text-align: center">3 469 200</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center">01/12/2025</td><td style="text-align: center"></td><td style="text-align: center">ACD</td><td style="text-align: center">S</td><td style="text-align: center">7 500 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">8</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8898</td><td style="text-align: center">ACD</td><td style="text-align: center">S</td><td style="text-align: center">9 900 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8902</td><td style="text-align: center">GROUPE DE NEGOCE INTERNATIONAL </td><td style="text-align: center">B</td><td style="text-align: center">3 048 988</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">02/12/2025</td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8914</td><td style="text-align: center">ENTREPRISE LA POINTE </td><td style="text-align: center">B</td><td style="text-align: center">14 999 984</td><td class="etat-instruit" style="text-align: center">INSTRUCTION</td><td style="text-align: center">03/12/2025</td></tr>
+<tr><td style="text-align: center">11</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8919</td><td style="text-align: center">DESK OFFICE</td><td style="text-align: center">S</td><td style="text-align: center">5 625 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">03/12/2025</td></tr>
+<tr><td style="text-align: center">12</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8931</td><td style="text-align: center">ETABLISSEMENT GORA ATHJ</td><td style="text-align: center">B</td><td style="text-align: center">7 500 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">03/12/2025</td></tr>
+<tr><td style="text-align: center">13</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8938</td><td style="text-align: center">EMG UNIVERSAL AUTO </td><td style="text-align: center">S</td><td style="text-align: center">2 600 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">03/12/2025</td></tr>
+<tr><td style="text-align: center">14</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8949</td><td style="text-align: center">AFRICAN BIO EXPERTISE</td><td style="text-align: center">A</td><td style="text-align: center">199 479 063</td><td class="etat-instruit" style="text-align: center">INSTRUCTION</td><td style="text-align: center">04/12/2025</td></tr>
+<tr><td style="text-align: center">15</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8948</td><td style="text-align: center">AFRICAN BIO EXPERTISE</td><td style="text-align: center">B</td><td style="text-align: center">49 869 766</td><td class="etat-instruit" style="text-align: center">INSTRUCTION</td><td style="text-align: center">04/12/2025</td></tr>
+<tr><td style="text-align: center">16</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8965</td><td style="text-align: center">ESSOR ASSURANCES</td><td style="text-align: center">CCA</td><td style="text-align: center">10 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">04/12/2025</td></tr>
+<tr><td style="text-align: center">17</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8952</td><td style="text-align: center">L’AFRICAINE D’ASSURANCES</td><td style="text-align: center">CCA</td><td style="text-align: center">10 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">04/12/2025</td></tr>
+<tr><td style="text-align: center">18</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8964</td><td style="text-align: center">GIE DAROUL HALIMOUL KABIR </td><td style="text-align: center">B</td><td style="text-align: center">5 610 400</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">04/12/2025</td></tr>
+<tr><td style="text-align: center">19</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8868</td><td style="text-align: center">ENTREPRISE DAROU SALAM</td><td style="text-align: center">A</td><td style="text-align: center">17 879 295</td><td class="etat-instruit" style="text-align: center">INSTRUCTION</td><td style="text-align: center">05/12/2025</td></tr>
+<tr><td style="text-align: center">20</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8980</td><td style="text-align: center">MASTER OFFICE </td><td style="text-align: center">S</td><td style="text-align: center">2 475 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">05/12/2025</td></tr>
+<tr><td style="text-align: center">21</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8991</td><td style="text-align: center">C.I.B.A</td><td style="text-align: center">A</td><td style="text-align: center">62 632 500</td><td class="etat-instruit" style="text-align: center">INSTRUCTION</td><td style="text-align: center">05/12/2025</td></tr>
+<tr><td style="text-align: center">22</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">9003</td><td style="text-align: center">MACLEODS PHARMACEUTICALS LTD</td><td style="text-align: center">S</td><td style="text-align: center">2 484 473</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">05/12/2025</td></tr>
+<tr><td style="text-align: center">23</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8966</td><td style="text-align: center">TORSO LIFESCIENCES PVT LTD</td><td style="text-align: center">S</td><td style="text-align: center">9 565 967</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">05/12/2025</td></tr>
+<tr><td style="text-align: center">24</td><td style="text-align: center">05/12/2025</td><td style="text-align: center"></td><td style="text-align: center">TAURUS </td><td style="text-align: center">S</td><td style="text-align: center">3 700 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center">05/12/2025</td></tr>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -687,249 +329,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>21/11/2025</td>
-                                <td>24/11/2025</td>
-                                <td>25/11/2025</td>
-                                <td>8 676</td>
-                                <td>TOUNKARA FRERE SERVICES</td>
-                                <td>S</td>
-                                <td>1 050 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>21/11/2025</td>
-                                <td>24/11/2025</td>
-                                <td>25/11/2025</td>
-                                <td>8 677</td>
-                                <td>CYTOPHARMA</td>
-                                <td>S</td>
-                                <td>2 235 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>13/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>8 485</td>
-                                <td>EMG</td>
-                                <td>B</td>
-                                <td>1 595 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>13/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>8 489</td>
-                                <td>EMG</td>
-                                <td>B</td>
-                                <td>11 950 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>13/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>8 490</td>
-                                <td>EMG</td>
-                                <td>B</td>
-                                <td>6 500 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>24/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>8 723</td>
-                                <td>SOLENE</td>
-                                <td>S</td>
-                                <td>4 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>25/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>8 748</td>
-                                <td>SOURIANE</td>
-                                <td>S</td>
-                                <td>12 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>25/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>8 747</td>
-                                <td>SESA TECHNOLOGIES</td>
-                                <td>S</td>
-                                <td>10 197 146</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>8 775</td>
-                                <td>BIOMEDICAL ENGINEERING</td>
-                                <td>S</td>
-                                <td>1 813 500</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td></td>
-                                <td>8 781</td>
-                                <td>2AB GROUP</td>
-                                <td>A</td>
-                                <td>142 345 865</td>
-                                <td>en attente des CCAG et CCAP</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>8 767</td>
-                                <td>DELTA INGENIERIE</td>
-                                <td>S</td>
-                                <td>3 500 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>25/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>8 768</td>
-                                <td>GIE RESEAU DE COMMERCE ET TRAVAUX</td>
-                                <td>S</td>
-                                <td>1 250 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>26/11/2025</td>
-                                <td>26/11/2025</td>
-                                <td></td>
-                                <td>8 773</td>
-                                <td>EBGC</td>
-                                <td>A</td>
-                                <td>93 233 792</td>
-                                <td>en attente des CCAG et CCAP</td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td></td>
-                                <td>8 773</td>
-                                <td>EBGC</td>
-                                <td>B</td>
-                                <td>23 308 448</td>
-                                <td>en attente des CCAG et CCAP</td>
-                            </tr>
-                            <tr>
-                                <td>15</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>8 803</td>
-                                <td>CCE SARL</td>
-                                <td>A</td>
-                                <td>245 854 678</td>
-                                <td class="etat-instruit">INSTRUIT</td>
-                            </tr>
-                            <tr>
-                                <td>16</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>8 795</td>
-                                <td>ESEF SURL</td>
-                                <td>S</td>
-                                <td>500 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>8 794</td>
-                                <td>MGS SARL</td>
-                                <td>S</td>
-                                <td>2 200 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>18</td>
-                                <td>26/11/2025</td>
-                                <td>27/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>8 788</td>
-                                <td>MGS SARL</td>
-                                <td>S</td>
-                                <td>800 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>19</td>
-                                <td>26/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>8 804</td>
-                                <td>ETIC</td>
-                                <td>S</td>
-                                <td>100 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>27/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>8 826</td>
-                                <td>SOFIDIS SARL</td>
-                                <td>S</td>
-                                <td>14 850 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>21</td>
-                                <td>27/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td>8 837</td>
-                                <td>TAURUS </td>
-                                <td>S</td>
-                                <td>2 600 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>22</td>
-                                <td>28/11/2025</td>
-                                <td>28/11/2025</td>
-                                <td></td>
-                                <td>8 856</td>
-                                <td>ETABLISSEMENT KHADY NDIAYE</td>
-                                <td>S</td>
-                                <td>4 200 000</td>
-                                <td class="etat-attente">EN ATTENTE</td>
-                            </tr>
-                        </tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">8865</td><td style="text-align: center">ANGEL BIOGENICS PVT LTD</td><td style="text-align: center">S</td><td style="text-align: center">29 518 065</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">28/11/2025</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8862</td><td style="text-align: center">ETABLISSEMENT KHADY RASSOUL</td><td style="text-align: center">B</td><td style="text-align: center">10 249 800</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">01/12/2025</td><td style="text-align: center"></td><td style="text-align: center">8867</td><td style="text-align: center">STALLION LABORATIRIES</td><td style="text-align: center">S</td><td style="text-align: center">48 946 293</td><td style="text-align: center">REPORT</td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8881</td><td style="text-align: center">ETS LE BAOBAB</td><td style="text-align: center">B</td><td style="text-align: center">2 919 700</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8880</td><td style="text-align: center">TATA INTERNATIONAL SENEGAL</td><td style="text-align: center">S</td><td style="text-align: center">13 500 000</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8903</td><td style="text-align: center">LOVATECH</td><td style="text-align: center">B</td><td style="text-align: center">24 900 000</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8900</td><td style="text-align: center">ACD</td><td style="text-align: center">S</td><td style="text-align: center">12 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">8</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8899</td><td style="text-align: center">ACD</td><td style="text-align: center">S</td><td style="text-align: center">4 500 000</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8896</td><td style="text-align: center">LEDEN GROUP</td><td style="text-align: center">S</td><td style="text-align: center">983 935</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8889</td><td style="text-align: center">ETS EL HADJI SAER SEYE</td><td style="text-align: center">S</td><td style="text-align: center">2 600 000</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">11</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8864</td><td style="text-align: center">UNITED BIOTECH</td><td style="text-align: center">S</td><td style="text-align: center">19 516 983</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">12</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center"></td><td style="text-align: center">8928</td><td style="text-align: center">CAFOMT</td><td style="text-align: center">AA</td><td style="text-align: center">590 280 000</td><td class="etat-attente" style="text-align: center">En attente de la main levée de la première caution</td></tr>
+<tr><td style="text-align: center">13</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8913</td><td style="text-align: center">ENAFCO</td><td style="text-align: center">S</td><td style="text-align: center">14 567 493</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">14</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8913</td><td style="text-align: center">ENAFCO</td><td style="text-align: center">S</td><td style="text-align: center">25 104 796</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">15</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8913</td><td style="text-align: center">ENAFCO</td><td style="text-align: center">S</td><td style="text-align: center">3 250 922</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">16</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">02/12/2025</td><td style="text-align: center"></td><td style="text-align: center">8935</td><td style="text-align: center">HUMANIS INTERIM</td><td style="text-align: center">CSI</td><td style="text-align: center">202 499 500</td><td class="etat-attente" style="text-align: center">EN ATTENTE</td></tr>
+<tr><td style="text-align: center">17</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">B</td><td style="text-align: center">368 933 672</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">18</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">RG</td><td style="text-align: center">368 933 672</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">19</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">B</td><td style="text-align: center">250 757 928</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">20</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">RG</td><td style="text-align: center">250 757 928</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">21</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8977</td><td style="text-align: center">GO GROUPE</td><td style="text-align: center">RG</td><td style="text-align: center">22 789 280</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">22</td><td style="text-align: center">03/12/2025</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center">8857</td><td style="text-align: center">SEEE ENERGIES</td><td style="text-align: center">B</td><td style="text-align: center">7 838 661</td><td class="etat-attente" style="text-align: center">EN ATTENTE</td></tr>
+<tr><td style="text-align: center">23</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">8913</td><td style="text-align: center">ENAFCO</td><td style="text-align: center">A</td><td style="text-align: center">74 469 596</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">24</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">05/12/2025</td><td style="text-align: center"></td><td style="text-align: center">8978</td><td style="text-align: center">SCET TUNISIE</td><td style="text-align: center">A</td><td style="text-align: center">113 850 000</td><td class="etat-attente" style="text-align: center">EN ATTENTE</td></tr>
+<tr><td style="text-align: center">25</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">8990</td><td style="text-align: center">GROUPE SOTERCO</td><td style="text-align: center">B</td><td style="text-align: center">10 995 095</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+<tr><td style="text-align: center">26</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">06/12/2025</td><td style="text-align: center">8990</td><td style="text-align: center">GROUPE SOTERCO</td><td style="text-align: center">A</td><td style="text-align: center">87 960 743</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -951,307 +377,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>24/11/2025</td>
-                                <td>8 675</td>
-                                <td>ECORE</td>
-                                <td>RG</td>
-                                <td>1 195 930</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td>24/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>24/11/2025</td>
-                                <td>8 678</td>
-                                <td>METRO GROUP SN</td>
-                                <td>S</td>
-                                <td>1 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>24/11/2025</td>
-                                <td>8 713</td>
-                                <td>PERFORMANCES SRCES</td>
-                                <td>S</td>
-                                <td>2 200 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>25/11/2025</td>
-                                <td>8 484</td>
-                                <td>EMG UNIVERSAL AUTO</td>
-                                <td>B</td>
-                                <td>18 147 500</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>25/11/2025</td>
-                                <td>8 510</td>
-                                <td>EMG UNIVERSAL AUTO</td>
-                                <td>B</td>
-                                <td>10 675 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>25/11/2025</td>
-                                <td>8 511</td>
-                                <td>EMG UNIVERSAL AUTO</td>
-                                <td>B</td>
-                                <td>5 542 500</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>25/11/2025</td>
-                                <td>8 491</td>
-                                <td>MELTEC AFRICA</td>
-                                <td>A</td>
-                                <td>139 776 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>25/11/2025</td>
-                                <td>8 491</td>
-                                <td>MELTEC AFRICA</td>
-                                <td>B</td>
-                                <td>52 416 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>25/11/2025</td>
-                                <td>8 714</td>
-                                <td>STABURO</td>
-                                <td>S</td>
-                                <td>9 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>25/11/2025</td>
-                                <td>8 719</td>
-                                <td>GROUPE SPEEDO EUROPE </td>
-                                <td>S</td>
-                                <td>2 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>25/11/2025</td>
-                                <td>8 729</td>
-                                <td>AFRIQUE CONCEPTION DISTRIBUTION</td>
-                                <td>S</td>
-                                <td>824 500</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>25/11/2025</td>
-                                <td>8 750</td>
-                                <td>SSI</td>
-                                <td>S</td>
-                                <td>1 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>25/11/2025</td>
-                                <td>8 744</td>
-                                <td>DISMAT </td>
-                                <td>S</td>
-                                <td>2 200 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td>26/11/2025</td>
-                                <td>8 765</td>
-                                <td>MISMO EQUIP</td>
-                                <td>S</td>
-                                <td>9 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>15</td>
-                                <td>26/11/2025</td>
-                                <td>8 766</td>
-                                <td>MISMO EQUIP</td>
-                                <td>S</td>
-                                <td>3 405 850</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>16</td>
-                                <td>26/11/2025</td>
-                                <td>8 776</td>
-                                <td>CAETANO FORMULA</td>
-                                <td>S</td>
-                                <td>7 800 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td>26/11/2025</td>
-                                <td>8 779</td>
-                                <td>GROUPE SPEEDO EUROPE </td>
-                                <td>S</td>
-                                <td>2 475 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>18</td>
-                                <td>26/11/2025</td>
-                                <td>8 785</td>
-                                <td>TECHNOLOGIES CONSULTING SRCES</td>
-                                <td>S</td>
-                                <td>14 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>19</td>
-                                <td>26/11/2025</td>
-                                <td>8 786</td>
-                                <td>GROUPE AL SALIHINE SRCES </td>
-                                <td>S</td>
-                                <td>3 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>26/11/2025</td>
-                                <td>8 780</td>
-                                <td>ERIB SARL</td>
-                                <td>A</td>
-                                <td>103 985 810</td>
-                                <td class="etat-a-traiter">A TRAITER</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>21</td>
-                                <td>27/11/2025</td>
-                                <td>8 807</td>
-                                <td>SYNERGIES SYSTÈME</td>
-                                <td>RG</td>
-                                <td>2 126 971</td>
-                                <td>ATTEND PV DE RECEPTION</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>22</td>
-                                <td>27/11/2025</td>
-                                <td>8 806</td>
-                                <td>AGENCE SENEGALAISE DE SECURITE ASS</td>
-                                <td>B</td>
-                                <td>40 674 600</td>
-                                <td>DDE CCAG CCAP</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>23</td>
-                                <td>27/11/2025</td>
-                                <td>8 838</td>
-                                <td>TECHNOLOGIES CONSULTING SRCES</td>
-                                <td>S</td>
-                                <td>2 739 096</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>24</td>
-                                <td>27/11/2025</td>
-                                <td>8 805</td>
-                                <td>G3A</td>
-                                <td>S</td>
-                                <td>45 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>25</td>
-                                <td>27/11/2025</td>
-                                <td>8 808</td>
-                                <td>MISMO EQUIP</td>
-                                <td>S</td>
-                                <td>14 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>26</td>
-                                <td>27/11/2025</td>
-                                <td>8 823</td>
-                                <td>OFFICE CONSOMMABLES</td>
-                                <td>S</td>
-                                <td>600 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>27</td>
-                                <td>27/11/2025</td>
-                                <td>8 824</td>
-                                <td>DISMAT </td>
-                                <td>S</td>
-                                <td>14 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>28</td>
-                                <td>27/11/2025</td>
-                                <td>8 827</td>
-                                <td>CAFOMT</td>
-                                <td>S</td>
-                                <td>20 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>29</td>
-                                <td>27/11/2025</td>
-                                <td>8 830</td>
-                                <td>KANY ENERGY SARL</td>
-                                <td>S</td>
-                                <td>1 250 000</td>
-                                <td class="etat-a-traiter">A TRAITER</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>30</td>
-                                <td>27/11/2025</td>
-                                <td>8 839</td>
-                                <td>NSIA ASSURANCES</td>
-                                <td>S</td>
-                                <td>2 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8866</td><td style="text-align: center">SOCIETE DES TRAVAUX PUBLICS </td><td style="text-align: center">S</td><td style="text-align: center">3 500 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">01/12/2025</td><td style="text-align: center">8887</td><td style="text-align: center">ETABLISSEMENT GORA ADJI</td><td style="text-align: center">S</td><td style="text-align: center">12 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8915</td><td style="text-align: center">SESA TECHNOLOGIES</td><td style="text-align: center">S</td><td style="text-align: center">2 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8916</td><td style="text-align: center">GLOBAL TECH</td><td style="text-align: center">S</td><td style="text-align: center">1 500 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8918</td><td style="text-align: center">LE GANDIOL</td><td style="text-align: center">RG</td><td style="text-align: center">7 271 394</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8941</td><td style="text-align: center">ENGELVIN SENEGAL</td><td style="text-align: center">S</td><td style="text-align: center">20 000 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8956</td><td style="text-align: center">SEEE ENERGIES</td><td style="text-align: center">A</td><td style="text-align: center">31 354 644</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">8</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8957</td><td style="text-align: center">SEEE ENERGIES</td><td style="text-align: center">B</td><td style="text-align: center">7 838 661</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">8996</td><td style="text-align: center">ENTREPRISE DIANECOUNDA INDUSTRIE EDT</td><td style="text-align: center">RG</td><td style="text-align: center">5 782 300</td><td class="etat-a-traiter" style="text-align: center">A TRAITER</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">8979</td><td style="text-align: center">CAETANO FORMULA SN</td><td style="text-align: center">S</td><td style="text-align: center">1 200 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">11</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">9001</td><td style="text-align: center">CAETANO FORMULA SN</td><td style="text-align: center">S</td><td style="text-align: center">518 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">12</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">9014</td><td style="text-align: center">2C2AR</td><td style="text-align: center">CCA</td><td style="text-align: center">10 000 000</td><td class="etat-a-traiter" style="text-align: center">A TRAITER</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">13</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">9004</td><td style="text-align: center">SEBTPA</td><td style="text-align: center">S</td><td style="text-align: center">5 500 000</td><td class="etat-a-traiter" style="text-align: center">A TRAITER</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">14</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">8561</td><td style="text-align: center">SURGI MEDIC</td><td style="text-align: center">S</td><td style="text-align: center">10 397 225</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">15</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">9021</td><td style="text-align: center">LABORATORIE MEDICALS</td><td style="text-align: center">S</td><td style="text-align: center">2 789 200</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">16</td><td style="text-align: center">05/12/2025</td><td style="text-align: center">8723</td><td style="text-align: center">ESFAM</td><td style="text-align: center">S</td><td style="text-align: center">1 500 000</td><td class="etat-traite" style="text-align: center">TRAITE</td><td style="text-align: center"></td></tr>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -1271,106 +413,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>24/11/2025</td>
-                                <td>8 691</td>
-                                <td>WORDLWIDE TRADING AND ENGINEERING </td>
-                                <td>A</td>
-                                <td>80 438 400</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>25/11/2025</td>
-                                <td>8 491</td>
-                                <td>MELTEC AFRICA</td>
-                                <td>A</td>
-                                <td>139 776 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>25/11/2025</td>
-                                <td>8 491</td>
-                                <td>MELTEC AFRICA</td>
-                                <td>B</td>
-                                <td>52 416 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>25/11/2025</td>
-                                <td>8 755</td>
-                                <td>BTD PROYECTOS 12</td>
-                                <td>S</td>
-                                <td>150 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>25/11/2025</td>
-                                <td>8 755</td>
-                                <td>BTD PROYECTOS 12</td>
-                                <td>S</td>
-                                <td>100 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>25/11/2025</td>
-                                <td>8 754</td>
-                                <td>BTD PROYECTOS 12</td>
-                                <td>S</td>
-                                <td>150 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>26/11/2025</td>
-                                <td>8 780</td>
-                                <td>ERIB SARL</td>
-                                <td>A</td>
-                                <td>103 985 810</td>
-                                <td class="etat-a-traiter">A TRAITER</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>26/11/2025</td>
-                                <td>8 781</td>
-                                <td>2AB GROUP</td>
-                                <td>A</td>
-                                <td>142 345 865</td>
-                                <td>en attente des CCAG et CCAP</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>26/11/2025</td>
-                                <td>8 773</td>
-                                <td>EBGC</td>
-                                <td>A</td>
-                                <td>93 233 792</td>
-                                <td>en attente des CCAG et CCAP</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>26/11/2025</td>
-                                <td>8 803</td>
-                                <td>CCE SARL</td>
-                                <td>A</td>
-                                <td>245 854 678</td>
-                                <td class="etat-instruit">INSTRUIT</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>26/11/2025</td>
-                                <td>8 804</td>
-                                <td>ETIC</td>
-                                <td>S</td>
-                                <td>100 000 000</td>
-                                <td class="etat-traite">TRAITE</td>
-                            </tr>
-                        </tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8928</td><td style="text-align: center">CAFOMT</td><td style="text-align: center">AA</td><td style="text-align: center">590 280 000</td><td class="etat-attente" style="text-align: center">En attente de la main levée de la première caution</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8935</td><td style="text-align: center">HUMANIS INTERIM</td><td style="text-align: center">CSI</td><td style="text-align: center">202 499 500</td><td class="etat-attente" style="text-align: center">EN ATTENTE</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8948</td><td style="text-align: center">AFRICAN BIO EXPERTISE</td><td style="text-align: center">B</td><td style="text-align: center">49 869 766</td><td class="etat-instruit" style="text-align: center">INSTRUCTION</td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">B</td><td style="text-align: center">368 933 672</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">RG</td><td style="text-align: center">368 933 672</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">B</td><td style="text-align: center">250 757 928</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center">03/12/2025</td><td style="text-align: center">8950</td><td style="text-align: center">CSE</td><td style="text-align: center">RG</td><td style="text-align: center">250 757 928</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">8</td><td style="text-align: center">02/12/2025</td><td style="text-align: center">8913</td><td style="text-align: center">ENAFCO</td><td style="text-align: center">A</td><td style="text-align: center">74 469 596</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8978</td><td style="text-align: center">SCET TUNISIE</td><td style="text-align: center">A</td><td style="text-align: center">113 850 000</td><td class="etat-attente" style="text-align: center">EN ATTENTE</td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center">04/12/2025</td><td style="text-align: center">8990</td><td style="text-align: center">GROUPE SOTERCO</td><td style="text-align: center">A</td><td style="text-align: center">87 960 743</td><td class="etat-traite" style="text-align: center">TRAITE</td></tr>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -1381,292 +434,27 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>N°</th>
                                 <th>Courrier du Jour</th>
                                 <th>Ref</th>
                                 <th>Client</th>
                                 <th>Produit</th>
-                                <th style="width: 150px;">Montant</th>
+                                <th style="min-width: 250px;">Montant</th>
                                 <th>État d'avancement</th>
-                                <th>Observations</th>
+                                <th style="border-right: 1px solid rgba(255, 255, 255, 0.3);">Observations</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="text-align: center;">2025-11-20 00:00:00</td>
-                                <td style="text-align: center;">8680</td>
-                                <td style="text-align: center;">ABF DISTRIBUTION ET SERVICES</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">7 283 635</td>
-                                <td style="text-align: center;">INSTRUCTION</td>
-                                <td style="text-align: center;">CIN du gérant + justificatif d'adresse + DP du gérant
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-18 00:00:00</td>
-                                <td style="text-align: center;">8615</td>
-                                <td style="text-align: center;">KADIC MULTISERVICES</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">2 760 855</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">Production des références techniques de la société </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-18 00:00:00</td>
-                                <td style="text-align: center;">8616</td>
-                                <td style="text-align: center;">KADIC MULTISERVICES</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">11 043 421</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">Production des références techniques de la société </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-18 00:00:00</td>
-                                <td style="text-align: center;">8644</td>
-                                <td style="text-align: center;">ENTREPRISE IDEAL 860</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">23 665 000</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">Déclaration de patrimoine du gérant</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-20 00:00:00</td>
-                                <td style="text-align: center;">8665</td>
-                                <td style="text-align: center;">HABA EQUIPEMENTS</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">369 900 000</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">Facture pro forma + état avance des marchés </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-20 00:00:00</td>
-                                <td style="text-align: center;">8667</td>
-                                <td style="text-align: center;">HABA EQUIPEMENTS</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">391 400 000</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">Facture pro forma + état avance des marchés </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-20 00:00:00</td>
-                                <td style="text-align: center;">8662</td>
-                                <td style="text-align: center;"> ATRIUM BTP & SERVICES</td>
-                                <td style="text-align: center;">S</td>
-                                <td style="text-align: center;">17 818 415</td>
-                                <td style="text-align: center;">Date de dépôt 06/01/2026 (donc facturation en attente)
-                                </td>
-                                <td style="text-align: center;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-20 00:00:00</td>
-                                <td style="text-align: center;">8650</td>
-                                <td style="text-align: center;">PARTENAIRE ENTREPRISE TRAVAUX</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">163 153 723</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + DP</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-20 00:00:00</td>
-                                <td style="text-align: center;">8650</td>
-                                <td style="text-align: center;">PARTENAIRE ENTREPRISE TRAVAUX</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">40 788 430</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + DP</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2025-11-21 00:00:00</td>
-                                <td style="text-align: center;">8673</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">91 232 895</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8671</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">152 269 495</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8669</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">412 961 114</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8670</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">103 240 278</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8672</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">364 931 582</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8670</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">38 067 374</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45981</td>
-                                <td style="text-align: center;">8668</td>
-                                <td style="text-align: center;">ENS</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">6 007 545</td>
-                                <td style="text-align: center;">EN ATTENTE</td>
-                                <td style="text-align: center;">REFERENCES TECHNIQUE + Ordre de service </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8695</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">42 735 944</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8696</td>
-                                <td style="text-align: center;">ACD</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">170 943 775</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45982</td>
-                                <td style="text-align: center;">8697</td>
-                                <td style="text-align: center;">ARCD AFRICA SA</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">179 626 224</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">CCAP + CCAG + point des engagements</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45974</td>
-                                <td style="text-align: center;">8514</td>
-                                <td style="text-align: center;">DIOP HOLDING</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">40 453 701</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">ACS + DP</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45974</td>
-                                <td style="text-align: center;">8474</td>
-                                <td style="text-align: center;">CSE</td>
-                                <td style="text-align: center;">CCO</td>
-                                <td style="text-align: center;">650 000 000</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">En attente</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">45973</td>
-                                <td style="text-align: center;">8439</td>
-                                <td style="text-align: center;">DABAKH INVEST</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">66 228 034</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">En attente de la confirmation du montant de la caution
-                                    de Retenue</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">8287</td>
-                                <td style="text-align: center;">CREATIVE MOTORS</td>
-                                <td style="text-align: center;">B</td>
-                                <td style="text-align: center;">10 170 000</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">En attente de la régularisation du sinistre de 7millions
-                                    FCFA</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">7013</td>
-                                <td style="text-align: center;">BIA DAKAR</td>
-                                <td style="text-align: center;">A</td>
-                                <td style="text-align: center;">109 724 141</td>
-                                <td style="text-align: center;">EN ATTENTE VALIDATION DU MODELE</td>
-                                <td style="text-align: center;">EN ATTENTE VALIDATION DU MODELE PAR DANGOTE CEMENT</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">5817</td>
-                                <td style="text-align: center;">FARYTEC ENGINEERING / QB FOOD</td>
-                                <td style="text-align: center;">AD</td>
-                                <td style="text-align: center;">516 713 208</td>
-                                <td style="text-align: center;">INSTRUIT</td>
-                                <td style="text-align: center;">ENG+ET+EDR+RE SUR UN BON POUVANT ETRE PRIS EN GARANTIE
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">6433</td>
-                                <td style="text-align: center;">BIA MALI/SIMICA AGRERATE</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">85 274 410</td>
-                                <td style="text-align: center;">A TRAITER</td>
-                                <td style="text-align: center;">RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">6435</td>
-                                <td style="text-align: center;">BIA MALI/BAGAMA MINING</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">131 191 400</td>
-                                <td style="text-align: center;">A TRAITER</td>
-                                <td style="text-align: center;">RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">6436</td>
-                                <td style="text-align: center;">BIA MALI/SNAF SERVICES</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">65 595 700</td>
-                                <td style="text-align: center;">A TRAITER</td>
-                                <td style="text-align: center;">RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">6437</td>
-                                <td style="text-align: center;">BIA MALI/INTER MINING SRSCES</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">49 196 775</td>
-                                <td style="text-align: center;">A TRAITER</td>
-                                <td style="text-align: center;">RETOURNE A LADIRCOM PR COMPLEMENTS D'INFOS</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">6638</td>
-                                <td style="text-align: center;">BIA DAKAR / KING FAHD PALACE</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">267 832 960</td>
-                                <td style="text-align: center;">Notification en cours</td>
-                                <td style="text-align: center;">Notification en cours</td>
-                            </tr>
-                        </tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">26/11/2025</td><td style="text-align: center">8780</td><td style="text-align: center">ERIB SARL</td><td style="text-align: center">A</td><td style="text-align: center">103 985 810</td><td class="etat-a-traiter" style="text-align: center">A TRAITER</td><td style="text-align: center">en attente des CCAG et CCAP</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">26/11/2025</td><td style="text-align: center">8781</td><td style="text-align: center">2AB GROUP</td><td style="text-align: center">A</td><td style="text-align: center">142 345 865</td><td style="text-align: center"></td><td style="text-align: center">en attente des CCAG et CCAP</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">26/11/2025</td><td style="text-align: center">8773</td><td style="text-align: center">EBGC</td><td style="text-align: center">A</td><td style="text-align: center">93 233 792</td><td class="etat-attente" style="text-align: center">en attente des CCAG et CCAP</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center">26/11/2025</td><td style="text-align: center">8773</td><td style="text-align: center">EBGC</td><td style="text-align: center">B</td><td style="text-align: center">23 308 448</td><td class="etat-attente" style="text-align: center">en attente des CCAG et CCAP</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center">26/11/2025</td><td style="text-align: center">8803</td><td style="text-align: center">CCE SARL</td><td style="text-align: center">A</td><td style="text-align: center">245 854 678</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center">27/11/2025</td><td style="text-align: center">8807</td><td style="text-align: center">SYNERGIES SYSTÈME</td><td style="text-align: center">RG</td><td style="text-align: center">2 126 971</td><td class="etat-a-traiter" style="text-align: center">A TRAITER</td><td style="text-align: center">ATTEND PV DE RECEPTION</td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center">27/11/2025</td><td style="text-align: center">8806</td><td style="text-align: center">AGENCE SENEGALAISE DE SECURITE ASS</td><td style="text-align: center">B</td><td style="text-align: center">40 674 600</td><td class="etat-a-traiter" style="text-align: center">A TRAITER</td><td style="text-align: center">DDE CCAG CCAP</td></tr>
+<tr><td style="text-align: center">8</td><td style="text-align: center">21/11/2025</td><td style="text-align: center">8697</td><td style="text-align: center">ARCD AFRICA SA</td><td style="text-align: center">A</td><td style="text-align: center">179 626 224</td><td class="etat-instruit" style="text-align: center">MEMO</td><td style="text-align: center">CCAP + CCAG + point des engagements</td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center"></td><td style="text-align: center">8287</td><td style="text-align: center">CREATIVE MOTORS</td><td style="text-align: center">B</td><td style="text-align: center">10 170 000</td><td class="etat-instruit" style="text-align: center">INSTRUIT</td><td style="text-align: center">En attente de la régularisation du sinistre de 7millions FCFA</td></tr>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -1688,66 +476,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="text-align: center;">1</td>
-                                <td style="text-align: center;">08/09/2025</td>
-                                <td style="text-align: center;">6638</td>
-                                <td style="text-align: center;">BIA DAKAR/KING FAHD PALACE</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">267 832 960</td>
-                                <td style="text-align: center;">Notification en cours</td>
-                                <td style="text-align: center;">B.SY</td>
-                                <td style="text-align: center;">Notification en cours</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">2</td>
-                                <td style="text-align: center;">26/08/2025</td>
-                                <td style="text-align: center;">6433</td>
-                                <td style="text-align: center;">BIA MALI/SIMICA AGRERATE</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">85 274 410</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">B.SY</td>
-                                <td style="text-align: center;">EN ATTENTE D’INFORMATIONS SUFFISANTES POUR LE TRAITEMENT
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">3</td>
-                                <td style="text-align: center;">26/08/2025</td>
-                                <td style="text-align: center;">6435</td>
-                                <td style="text-align: center;">BIA DAKAR/BAGANA MINING</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">131 191 400</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">B.SY</td>
-                                <td style="text-align: center;">EN ATTENTE D’INFORMATIONS SUFFISANTES POUR LE TRAITEMENT
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">4</td>
-                                <td style="text-align: center;">26/08/2025</td>
-                                <td style="text-align: center;">6436</td>
-                                <td style="text-align: center;">BIA DAKAR/SNAF SERVICES</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">65 595 700</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">B.SY</td>
-                                <td style="text-align: center;">EN ATTENTE D’INFORMATIONS SUFFISANTES POUR LE TRAITEMENT
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">5</td>
-                                <td style="text-align: center;">26/08/2025</td>
-                                <td style="text-align: center;">6437</td>
-                                <td style="text-align: center;">BIA DAKAR/INTER MINING</td>
-                                <td style="text-align: center;">CI</td>
-                                <td style="text-align: center;">49 196 775</td>
-                                <td style="text-align: center;"></td>
-                                <td style="text-align: center;">B.SY</td>
-                                <td style="text-align: center;">EN ATTENTE D’INFORMATIONS SUFFISANTES POUR LE TRAITEMENT
-                                </td>
-                            </tr>
-                        </tbody>
+<!-- Données non disponibles -->
+</tbody>
                     </table>
                 </div>
             </section>
